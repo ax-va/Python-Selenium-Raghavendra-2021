@@ -1,3 +1,3 @@
 # Web-Tests-Selenium-Raghavendra-2021
 
-Versions: Python 3.8+, selenium 4.7.2, webdriver-manager 3.8.5
+Versions: ython 3.8+, selenium 4.7.2, webdriver-manager 3.8.5
