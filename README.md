@@ -1,3 +1,3 @@
 # Python-WebTests-Selenium-Raghavendra-2021
 
-Selenium version 4.7.2
+Versions: selenium 4.7.2, webdriver-manager 3.8.5
