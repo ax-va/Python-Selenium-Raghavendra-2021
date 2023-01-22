@@ -19,7 +19,13 @@ search = driver.find_element(By.NAME, "q")
 search.send_keys("github ax-va")
 # Submit text to search bar
 search.submit()
-# Wait 10 seconds
-time.sleep(10)
-# Close Firefox browser
+# Wait 5 seconds
+time.sleep(5)
+# Get first item
+first_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
+# Click
+first_item.click()
+# Wait 5 seconds
+time.sleep(5)
+# Close Chrome browser
 driver.quit()
