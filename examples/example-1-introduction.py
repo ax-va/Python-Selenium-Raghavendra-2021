@@ -17,6 +17,8 @@ button_reject_all.click()
 search = driver.find_element(By.NAME, "q")
 # Write text to search
 search.send_keys("github ax-va")
+# Wait 5 seconds
+time.sleep(5)
 # Submit text to search bar
 search.submit()
 # Wait 5 seconds
