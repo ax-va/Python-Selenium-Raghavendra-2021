@@ -9,11 +9,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 # Add URL to open in browser
 driver.get("http://www.google.com")
-# Find Element of button "Reject all"
+# Find element of button "Reject all"
 button_reject_all = driver.find_element(By.XPATH, "(//button)[4]")
 # Click button
 button_reject_all.click()
-# Get Element of search bar
+# Get element of search bar
 search = driver.find_element(By.NAME, "q")
 # Write text to search
 search.send_keys("github ax-va")
