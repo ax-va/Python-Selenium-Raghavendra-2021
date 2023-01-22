@@ -13,9 +13,9 @@ driver.get("http://www.google.com")
 button_reject_all = driver.find_element(By.XPATH, "(//button)[4]")
 # Click button
 button_reject_all.click()
-# Find Element of search bar
+# Get Element of search bar
 search = driver.find_element(By.NAME, "q")
-# Write text
+# Write text to search
 search.send_keys("github ax-va")
 # Submit text to search bar
 search.submit()
@@ -23,7 +23,7 @@ search.submit()
 time.sleep(5)
 # Get first item
 first_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
-# Click
+# Click first item
 first_item.click()
 # Wait 5 seconds
 time.sleep(5)
