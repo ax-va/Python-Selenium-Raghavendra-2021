@@ -11,6 +11,7 @@ FIREFOX_PATH = None
 GECKODRIVER_PATH = None
 CHROMEDRIVER_PATH = None
 
+# Check for OS
 if sys.platform == "win32":
     FIREFOX_PATH = "C:/Program Files/Mozilla Firefox/firefox.exe"
     GECKODRIVER_PATH = "../drivers/geckodriver-v0.32.0-win32/geckodriver.exe"
