@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
+from selenium.common.exceptions import NoSuchElementException
 from webdriver_manager.firefox import GeckoDriverManager
 
 # Open web Firefox browser using webdriver
@@ -12,10 +13,11 @@ driver.get("http://www.google.com")
 try:
     # Find element of button "Reject all"
     button_reject_all = driver.find_element(By.ID, "W0wltc")
+except NoSuchElementException:
+    pass
+else:
     # Click button
     button_reject_all.click()
-except Exception:
-    pass
 # Get element of search bar
 search = driver.find_element(By.NAME, "q")
 # Write text to search
