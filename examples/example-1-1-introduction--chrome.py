@@ -6,8 +6,18 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+# WDM for webdriver manager
+CHROMEDRIVER_WDM_CACHE_PATH = "../webdrivers/chromedriver-wdm-cache"
+
 # Open web Chrome browser using webdriver
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+driver = webdriver.Chrome(
+    service=Service(
+        ChromeDriverManager(
+            path=CHROMEDRIVER_WDM_CACHE_PATH,
+            cache_valid_range=30  # days
+        ).install()
+    )
+)
 # Add URL to open in browser
 driver.get("http://www.google.com")
 try:
