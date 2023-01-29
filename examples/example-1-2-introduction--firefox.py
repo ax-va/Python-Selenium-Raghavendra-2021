@@ -16,7 +16,7 @@ try:
 except NoSuchElementException:
     pass
 else:
-    # Click button
+    # Click button "Reject all"
     button_reject_all.click()
 # Get element of search bar
 search = driver.find_element(By.NAME, "q")
