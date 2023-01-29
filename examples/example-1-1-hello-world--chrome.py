@@ -6,14 +6,12 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-# WDM for webdriver manager
-CHROMEDRIVER_WDM_CACHE_PATH = "../webdrivers/chromedriver-wdm-cache"
 
 # Open web Chrome browser using webdriver
 driver = webdriver.Chrome(
     service=Service(
         ChromeDriverManager(
-            path=CHROMEDRIVER_WDM_CACHE_PATH,
+            path="../webdrivers/chromedriver-wdm-cache",
             cache_valid_range=30  # days
         ).install()
     )

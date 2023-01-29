@@ -6,14 +6,12 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.firefox import GeckoDriverManager
 
-# WDM for webdriver manager
-GECKODRIVER_WDM_CACHE_PATH = "../webdrivers/geckodriver-wdm-cache"
 
 # Open web Firefox browser using webdriver
 driver = webdriver.Firefox(
     service=Service(
         GeckoDriverManager(
-            path=GECKODRIVER_WDM_CACHE_PATH,
+            path="../webdrivers/geckodriver-wdm-cache",
             cache_valid_range=30  # days
         ).install()
     )
