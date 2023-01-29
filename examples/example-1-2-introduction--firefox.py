@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
 
-# Open web Chrome browser using webdriver
+# Open web Firefox browser using webdriver
 driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 # Add URL to open in browser
 driver.get("http://www.google.com")
@@ -32,5 +32,5 @@ first_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[
 first_item.click()
 # Wait 5 seconds
 time.sleep(5)
-# Close Chrome browser
+# Close Firefox browser
 driver.quit()
