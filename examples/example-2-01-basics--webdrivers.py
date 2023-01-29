@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.firefox.options import Options
 
-MY_GITHUB_LINK = "https://github.com/ax-va/Web-Tests-Selenium4-Raghavendra-2021"
+GITHUB_URL = "https://github.com/ax-va/Web-Tests-Selenium4-Raghavendra-2021"
 
 FIREFOX_PATH = None
 GECKODRIVER_PATH = None
@@ -23,13 +23,13 @@ options_firefox.binary_location = FIREFOX_PATH
 service_firefox = Service(executable_path=GECKODRIVER_PATH)
 driver_firefox = webdriver.Firefox(options=options_firefox, service=service_firefox)
 # Open in browser
-driver_firefox.get(MY_GITHUB_LINK)
+driver_firefox.get(GITHUB_URL)
 
 # Open Chrome browser on Windows
 service_chrome = Service(executable_path=CHROMEDRIVER_PATH)
 driver_chrome = webdriver.Chrome(service=service_chrome)
 # Open in browser
-driver_chrome.get(MY_GITHUB_LINK)
+driver_chrome.get(GITHUB_URL)
 
 time.sleep(5)
 

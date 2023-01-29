@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
-MY_GITHUB_LINK = "https://github.com/ax-va/Web-Tests-Selenium4-Raghavendra-2021"
+GITHUB_URL = "https://github.com/ax-va/Web-Tests-Selenium4-Raghavendra-2021"
 # WDM for webdriver manager
 CHROMEDRIVER_WDM_CACHE_PATH = "../webdrivers/chromedriver-wdm-cache"
 GECKODRIVER_WDM_CACHE_PATH = "../webdrivers/geckodriver-wdm-cache"
@@ -21,7 +21,7 @@ driver_chrome = webdriver.Chrome(
     )
 )
 # Add URL to open in browser
-driver_chrome.get(MY_GITHUB_LINK)
+driver_chrome.get(GITHUB_URL)
 
 # Open web Firefox browser using webdriver
 driver_firefox = webdriver.Firefox(
@@ -33,7 +33,7 @@ driver_firefox = webdriver.Firefox(
     )
 )
 # Add URL to open in browser
-driver_firefox.get(MY_GITHUB_LINK)
+driver_firefox.get(GITHUB_URL)
 
 time.sleep(5)
 
