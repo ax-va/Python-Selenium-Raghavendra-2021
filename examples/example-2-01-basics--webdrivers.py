@@ -14,8 +14,8 @@ CHROMEDRIVER_PATH = None
 # Check for OS
 if sys.platform == "win32":
     FIREFOX_PATH = "C:/Program Files/Mozilla Firefox/firefox.exe"
-    GECKODRIVER_PATH = "../webdrivers/geckodriver-win32-0.32.0/geckodriver.exe"
-    CHROMEDRIVER_PATH = "../webdrivers/chromedriver-win32-109.0.5414.74/chromedriver.exe"
+    GECKODRIVER_PATH = "../webdrivers/geckodriver-win32-0_32_0/geckodriver.exe"
+    CHROMEDRIVER_PATH = "../webdrivers/chromedriver-win32-109_0_5414_74/chromedriver.exe"
 
 # Open Mozilla Firefox browser on Windows
 options_firefox = Options()
