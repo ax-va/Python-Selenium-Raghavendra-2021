@@ -17,7 +17,7 @@ if sys.platform == "win32":
     GECKODRIVER_PATH = "../webdrivers/geckodriver-win32-0_32_0/geckodriver.exe"
     CHROMEDRIVER_PATH = "../webdrivers/chromedriver-win32-109_0_5414_74/chromedriver.exe"
 
-# Open Mozilla Firefox browser on Windows
+# Open Firefox browser
 options_firefox = Options()
 options_firefox.binary_location = FIREFOX_PATH
 service_firefox = Service(executable_path=GECKODRIVER_PATH)
@@ -25,7 +25,7 @@ driver_firefox = webdriver.Firefox(options=options_firefox, service=service_fire
 # Open in browser
 driver_firefox.get(GITHUB_URL)
 
-# Open Chrome browser on Windows
+# Open Chrome browser
 service_chrome = Service(executable_path=CHROMEDRIVER_PATH)
 driver_chrome = webdriver.Chrome(service=service_chrome)
 # Open in browser
