@@ -2,5 +2,9 @@
     "win64_geckodriver_0.32_for_109.0": {
         "timestamp": "29/01/2023",
         "binary_path": "../webdrivers/geckodriver-wdm-cache\\.wdm\\drivers\\geckodriver\\win64\\0.32\\geckodriver.exe"
+    },
+    "linux64_geckodriver_0.32_for_109.0": {
+        "timestamp": "10/02/2023",
+        "binary_path": "../webdrivers/geckodriver-wdm-cache/.wdm/drivers/geckodriver/linux64/0.32/geckodriver"
     }
 }
