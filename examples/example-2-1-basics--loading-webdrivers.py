@@ -27,14 +27,14 @@ else:
 # Set executable binary Firefox location
 options_firefox = webdriver.FirefoxOptions()
 options_firefox.binary_location = FIREFOX_BIN_LOCATION
-# Set webdriver
+# Set webdriver location
 service_firefox = FirefoxService(executable_path=GECKODRIVER_LOCATION)
 driver_firefox = webdriver.Firefox(options=options_firefox, service=service_firefox)
 # Open in browser
 driver_firefox.get(GITHUB_URL)
 
 # Open Chrome browser
-# Set webdriver
+# Set webdriver location
 service_chrome = ChromeService(executable_path=CHROMEDRIVER_LOCATION)
 driver_chrome = webdriver.Chrome(service=service_chrome)
 # Open in browser
