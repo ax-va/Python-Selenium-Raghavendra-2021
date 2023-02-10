@@ -11,7 +11,7 @@ FIREFOX_BIN_LOCATION = None
 GECKODRIVER_LOCATION = None
 CHROMEDRIVER_LOCATION = None
 
-# Check for OS
+# Choose locations for different OS
 if sys.platform == "win32":
     FIREFOX_BIN_LOCATION = "C:/Program Files/Mozilla Firefox/firefox.exe"
     GECKODRIVER_LOCATION = "../webdrivers/geckodriver-win32-0_32_0/geckodriver.exe"
