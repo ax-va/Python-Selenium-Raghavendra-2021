@@ -21,7 +21,7 @@ elif sys.platform == "linux":
     GECKODRIVER_LOCATION = "/snap/firefox/current/usr/lib/firefox/geckodriver"
     CHROMEDRIVER_LOCATION = "../webdrivers/chromedriver-linux64-110_0_5481/chromedriver"
 else:
-    raise NotImplementedError("locations missing")
+    raise NotImplementedError("location missing")
 
 # Open Firefox browser
 # Set executable binary Firefox location
