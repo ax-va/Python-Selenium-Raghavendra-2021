@@ -18,6 +18,7 @@ LOCATIONS = \
                     {
                         "webdriver": "../webdrivers/chromedriver-win32-109_0_5414_74/chromedriver.exe",
                     },
+            },
         "linux64":
             {
                 "firefox":
@@ -29,7 +30,6 @@ LOCATIONS = \
                     {
                         "webdriver": "../webdrivers/chromedriver-linux64-110_0_5481/chromedriver",
                     }
-                }
             }
     }
 

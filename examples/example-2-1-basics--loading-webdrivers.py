@@ -46,8 +46,8 @@ time.sleep(5)
 driver_firefox.close()
 # Close the currently open window
 driver_chrome.close()
-# Terminate the process for the driver
+# (Closes all the open windows and) terminate the process for the driver
 driver_firefox.quit()
-# Terminate the process for the driver
+# (Closes all the open windows and) terminate the process for the driver
 driver_chrome.quit()
 
