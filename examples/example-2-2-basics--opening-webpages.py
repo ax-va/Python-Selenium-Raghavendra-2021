@@ -14,8 +14,10 @@ import utils.webdrivers as webdrivers
 
 
 driver = webdrivers.get_chrome_webdriver()
+# Open online page
 driver.get("https://github.com/ax-va/Selenium4-Raghavendra-2021")
 time.sleep(5)
+# Open offline page
 website_abspath = os.path.abspath("../websites/website/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
