@@ -5,12 +5,33 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 
 BROWSERS = ["chrome", "firefox"]
-FIREFOX_WIN_BIN_LOCATION = "C:/Program Files/Mozilla Firefox/firefox.exe"
-FIREFOX_LINUX_BIN_LOCATION = "/snap/firefox/current/usr/lib/firefox/firefox"
-GECKODRIVER_WIN32_LOCATION = "../webdrivers/geckodriver-win32-0_32_0/geckodriver.exe"
-GECKODRIVER_LINUS64_LOCATION = "/snap/firefox/current/usr/lib/firefox/geckodriver"
-CHROMEDRIVER_WIN32_LOCATION = "../webdrivers/chromedriver-win32-109_0_5414_74/chromedriver.exe"
-CHROME_DRIVER_LINUX64_LOCATION = "../webdrivers/chromedriver-linux64-110_0_5481/chromedriver"
+LOCATIONS = \
+    {
+        "win32":
+            {
+                "firefox":
+                    {
+                        "bin": "C:/Program Files/Mozilla Firefox/firefox.exe",
+                        "webdriver": "../webdrivers/geckodriver-win32-0_32_0/geckodriver.exe",
+                    },
+                "chrome":
+                    {
+                        "webdriver": "../webdrivers/chromedriver-win32-109_0_5414_74/chromedriver.exe",
+                    },
+        "linux64":
+            {
+                "firefox":
+                    {
+                        "bin": "/snap/firefox/current/usr/lib/firefox/firefox",
+                        "webdriver": "/snap/firefox/current/usr/lib/firefox/geckodriver",
+                    },
+                "chrome":
+                    {
+                        "webdriver": "../webdrivers/chromedriver-linux64-110_0_5481/chromedriver",
+                    }
+                }
+            }
+    }
 
 
 def get_webdriver(browser=BROWSERS[0]):
@@ -19,13 +40,13 @@ def get_webdriver(browser=BROWSERS[0]):
 
     # Choose locations for different OS
     if sys.platform == "win32":
-        firefox_bin_location = FIREFOX_WIN_BIN_LOCATION
-        geckodriver_location = GECKODRIVER_WIN32_LOCATION
-        chromedriver_location = CHROMEDRIVER_WIN32_LOCATION
+        firefox_bin_location = LOCATIONS["win32"]["firefox"]["bin"]
+        geckodriver_location = LOCATIONS["win32"]["firefox"]["webdriver"]
+        chromedriver_location = LOCATIONS["win32"]["chrome"]["webdriver"]
     elif sys.platform == "linux":
-        firefox_bin_location = FIREFOX_LINUX_BIN_LOCATION
-        geckodriver_location = GECKODRIVER_LINUS64_LOCATION
-        chromedriver_location = CHROME_DRIVER_LINUX64_LOCATION
+        firefox_bin_location = LOCATIONS["linux64"]["firefox"]["bin"]
+        geckodriver_location = LOCATIONS["linux64"]["firefox"]["webdriver"]
+        chromedriver_location = LOCATIONS["linux64"]["chrome"]["webdriver"]
     else:
         raise NotImplementedError("locations missing")
 

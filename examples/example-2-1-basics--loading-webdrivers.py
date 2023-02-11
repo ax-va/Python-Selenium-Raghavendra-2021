@@ -42,9 +42,9 @@ driver_chrome.get(GITHUB_URL)
 
 time.sleep(5)
 
-# Close Firefox browser
+# Close the currently open window
 driver_firefox.close()
-# Close Chrome browser
+# Close the currently open window
 driver_chrome.close()
 # Terminate the process for the driver
 driver_firefox.quit()
