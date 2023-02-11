@@ -30,16 +30,16 @@ else:
     button_reject_all.click()
 
 # Get element of search bar
-search = driver.find_element(By.NAME, "q")
+search_bar = driver.find_element(By.NAME, "q")
 
 # Write text to search
-search.send_keys("github ax-va")
+search_bar.send_keys("github ax-va")
 
 # Wait 5 seconds
 time.sleep(5)
 
 # Submit text to search bar
-search.submit()
+search_bar.submit()
 
 # Wait 5 seconds
 time.sleep(5)
