@@ -34,7 +34,7 @@ LOCATIONS = \
     }
 
 
-def get_webdriver(browser=BROWSERS[0]):
+def get_webdriver(browser="chrome"):
     if browser not in BROWSERS:
         raise NotImplementedError("not implemented for " + browser)
 
