@@ -13,7 +13,7 @@ if package_dir not in sys.path:
 import utils.webdrivers as webdrivers
 
 
-driver = webdrivers.get_chrome_webdriver()
+driver = webdrivers.get_chromedriver()
 # Open URL page
 driver.get("https://github.com/ax-va/Selenium4-Raghavendra-2021")
 time.sleep(5)

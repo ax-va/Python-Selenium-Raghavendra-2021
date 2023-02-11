@@ -65,10 +65,10 @@ def get_webdriver(browser="chrome"):
         return driver_chrome
 
 
-def get_firefox_webdriver():
+def get_geckodriver():
     return get_webdriver(browser="firefox")
 
 
-def get_chrome_webdriver():
+def get_chromedriver():
     return get_webdriver(browser="chrome")
 
