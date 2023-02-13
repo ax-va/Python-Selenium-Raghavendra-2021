@@ -1,4 +1,3 @@
-import os
 import pathlib
 import sys
 import time
@@ -40,3 +39,5 @@ print(window_position)  # {'x': 52, 'y': 50}
 # Get window size
 window_size = driver.get_window_size()
 print(window_size)  # {'width': 800, 'height': 600}
+# Closes all the open windows and terminate the process for the driver
+driver.quit()
