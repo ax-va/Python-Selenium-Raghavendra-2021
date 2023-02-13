@@ -31,7 +31,7 @@ main_branch.click()
 time.sleep(5)
 # Click on element again to close it, then wait
 actions.click(main_branch).pause(5).perform()
-# Click on element and hold (without releasing), then wait and release
+# Click on element and hold (without releasing), then wait, release, and wait
 actions.click_and_hold(main_branch).pause(5).release().pause(5).perform()
 # Double-click, then wait
 actions.double_click(main_branch).pause(5).perform()
