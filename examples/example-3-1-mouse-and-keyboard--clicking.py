@@ -19,6 +19,7 @@ GITHUB_URL = "https://github.com/ax-va/Selenium4-Raghavendra-2021"
 
 driver = webdrivers.get_geckodriver()
 actions = ActionChains(driver)
+
 # Open my GitHub URL
 driver.get(GITHUB_URL)
 time.sleep(5)
@@ -35,7 +36,7 @@ actions.click_and_hold(main_branch).pause(5).release().pause(5).perform()
 actions.double_click(main_branch).pause(5).perform()
 # Right-click to open context menu
 actions.context_click(main_branch).pause(5).perform()
-# TODO: how to close context menu?
+# TODO: How to close context menu?
 
 # Closes all the open windows and terminate the process for the driver
 driver.quit()
