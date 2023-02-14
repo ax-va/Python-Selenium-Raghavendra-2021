@@ -2,6 +2,7 @@ import pathlib
 import sys
 import time
 
+import pyautogui
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
@@ -19,6 +20,7 @@ GITHUB_URL = "https://github.com/ax-va/Selenium4-Raghavendra-2021"
 
 driver = webdrivers.get_geckodriver()
 actions = ActionChains(driver)
+
 # Open my GitHub URL
 driver.get(GITHUB_URL)
 time.sleep(5)
@@ -27,15 +29,17 @@ main_branch = driver.find_element(By.XPATH, "//*[@class='btn css-truncate']")
 # Click on element
 main_branch.click()
 time.sleep(5)
-# Click on element again to close it
+# Click on element again to close it, then wait
 actions.click(main_branch).pause(5).perform()
-# Click on element (without releasing) and hold, then release
+# Click on element and hold (without releasing), then wait, release, and wait
 actions.click_and_hold(main_branch).pause(5).release().pause(5).perform()
-# Double-click
+# Double-click, then wait
 actions.double_click(main_branch).pause(5).perform()
-# Right-click to open context menu
+# Right-click to open context menu, then wait
 actions.context_click(main_branch).pause(5).perform()
-# TODO: how to close context menu?
+# Close context menu using "pyautogui"
+pyautogui.press("escape")
+time.sleep(5)
 
 # Closes all the open windows and terminate the process for the driver
 driver.quit()
