@@ -1,9 +1,8 @@
 """
-Selenium has bugs with drag-and-drop:
-1) It does not work (Chrome, Windows 11);
-2) Positions are determined not correctly (Chrome, Ubuntu);
-3) release() does not work (Chrome, Ubuntu).
-
+Selenium has BUGS with drag-and-drop:
+1) It does not work (Chrome, Firefox, Windows);
+2) Positions are determined not correctly (Chrome, Firefox, Ubuntu);
+3) release() does not work (Chrome, Firefox, Ubuntu).
 """
 import os
 import pathlib
@@ -23,7 +22,7 @@ if package_dir not in sys.path:
 import utils.webdrivers as webdrivers
 
 
-driver = webdrivers.get_chromedriver()
+driver = webdrivers.get_geckodriver()
 website_abspath = os.path.abspath("../websites/drag-and-drop/drag-and-drop.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
@@ -33,8 +32,8 @@ target1 = driver.find_element(By.ID, "target1")
 
 actions = ActionChains(driver)
 # actions.drag_and_drop(source1, target1).pause(5).perform()
-actions.click_and_hold(source1).move_to_element(target1).pause(5).release().pause(5).perform()
-# actions.click_and_hold(source1).move_by_offset(120, 55).pause(5).release().pause(5).perform()
+# actions.click_and_hold(source1).move_to_element(target1).pause(5).release().pause(5).perform()
+actions.click_and_hold(source1).move_by_offset(120, 55).pause(5).release().pause(5).perform()
 
 # Closes all the open windows and terminate the process for the driver
 driver.quit()
