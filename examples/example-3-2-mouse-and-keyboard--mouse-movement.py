@@ -23,16 +23,16 @@ actions = ActionChains(driver)
 driver.get("http://www.apress.com")
 time.sleep(5)
 # Find element
-main_menu = driver.find_element(By.LINK_TEXT, "CATEGORIES")
+menu_categories = driver.find_element(By.LINK_TEXT, "CATEGORIES")
 # Move to element to open the panel
-actions.move_to_element(main_menu).perform()
+actions.move_to_element(menu_categories).perform()
 # Wait for sub menu to be displayed
 WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.LINK_TEXT, "Python")))
 # Find element
-sub_menu = driver.find_element(By.LINK_TEXT, "Python")
+menu_python = driver.find_element(By.LINK_TEXT, "Python")
 time.sleep(5)
 # Click on element
-sub_menu.click()
+menu_python.click()
 time.sleep(5)
 
 # Closes all the open windows and terminate the process for the driver
