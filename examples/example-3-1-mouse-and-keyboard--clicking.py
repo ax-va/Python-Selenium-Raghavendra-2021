@@ -37,7 +37,7 @@ actions.click_and_hold(main_branch).pause(5).release().pause(5).perform()
 actions.double_click(main_branch).pause(5).perform()
 # Right-click to open context menu, then wait
 actions.context_click(main_branch).pause(5).perform()
-# Close context menu using "pyautogui"
+# Close context menu using PyAutoGUI
 pyautogui.press("escape")
 time.sleep(5)
 
