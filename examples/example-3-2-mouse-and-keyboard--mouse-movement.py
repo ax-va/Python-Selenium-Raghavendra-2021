@@ -17,16 +17,23 @@ if package_dir not in sys.path:
 import utils.webdrivers as webdrivers
 
 
-GITHUB_URL = "https://github.com/ax-va/Selenium4-Raghavendra-2021"
-
 driver = webdrivers.get_geckodriver()
 actions = ActionChains(driver)
-# Open my GitHub URL
-driver.get(GITHUB_URL)
+
+driver.get("http://www.apress.com")
 time.sleep(5)
-# Find element of "main branch"
-main_branch = driver.find_element(By.XPATH, "//*[@class='btn css-truncate']")
+# Find element
+main_menu = driver.find_element(By.LINK_TEXT, "CATEGORIES")
+# Move to element to open the panel
+actions.move_to_element(main_menu).perform()
+# Wait for sub menu to be displayed
+WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.LINK_TEXT, "Python")))
+# Find element
+sub_menu = driver.find_element(By.LINK_TEXT, "Python")
+time.sleep(5)
+# Click on element
+sub_menu.click()
+time.sleep(5)
 
-actions.move_to_element(main_branch).pause(5).perform()
-
-WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.LINK_TEXT, "Switch branches or tags")))
+# Closes all the open windows and terminate the process for the driver
+driver.quit()
