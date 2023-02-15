@@ -1,7 +1,9 @@
 """
 Selenium has bugs with drag-and-drop:
-1) Positions are determined not correctly;
-2) release() does not work.
+1) It does not work (Chrome, Windows 11);
+2) Positions are determined not correctly (Chrome, Ubuntu);
+3) release() does not work (Chrome, Ubuntu).
+
 """
 import os
 import pathlib
@@ -31,8 +33,8 @@ target1 = driver.find_element(By.ID, "target1")
 
 actions = ActionChains(driver)
 # actions.drag_and_drop(source1, target1).pause(5).perform()
-# actions.click_and_hold(source1).move_to_element(target1).pause(5).release().pause(5).perform()
-actions.click_and_hold(source1).move_by_offset(120, 55).pause(5).release().pause(5).perform()
+actions.click_and_hold(source1).move_to_element(target1).pause(5).release().pause(5).perform()
+# actions.click_and_hold(source1).move_by_offset(120, 55).pause(5).release().pause(5).perform()
 
 # Closes all the open windows and terminate the process for the driver
 driver.quit()
