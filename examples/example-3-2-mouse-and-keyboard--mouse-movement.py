@@ -26,7 +26,7 @@ time.sleep(5)
 menu_categories = driver.find_element(By.LINK_TEXT, "CATEGORIES")
 # Move to element to open the drop-down menu
 actions.move_to_element(menu_categories).perform()
-# Wait for sub menu to be displayed
+# Wait 5 seconds for submenu to be displayed
 WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.LINK_TEXT, "Python")))
 # Find element
 menu_python = driver.find_element(By.LINK_TEXT, "Python")
