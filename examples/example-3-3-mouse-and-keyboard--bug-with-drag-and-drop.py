@@ -1,4 +1,4 @@
-# Does not work:
+# Drag-and-drop of Selenium does not work:
 """
 element = driver.find_element(By.ID, "source")
 target = driver.find_element(By.ID, "target")
