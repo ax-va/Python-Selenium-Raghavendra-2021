@@ -1,7 +1,7 @@
 """
 Selenium has bugs with drag-and-drop:
 1) Positions are determined not correctly;
-2) 'Release' does not work.
+2) release() does not work.
 """
 import os
 import pathlib
