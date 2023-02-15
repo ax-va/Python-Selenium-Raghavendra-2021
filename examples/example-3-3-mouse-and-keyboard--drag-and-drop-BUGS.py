@@ -1,5 +1,5 @@
 """
-Selenium has bugs with drag-and-drop and actions:
+Selenium has bugs with drag-and-drop and action chains:
 1) It does not work (Chrome, Firefox, Windows);
 2) Positions are determined not correctly (Chrome, Firefox, Ubuntu);
 3) release() does not work (Chrome, Firefox, Ubuntu).
