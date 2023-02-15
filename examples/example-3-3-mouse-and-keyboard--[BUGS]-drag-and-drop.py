@@ -22,7 +22,7 @@ if package_dir not in sys.path:
 import utils.webdrivers as webdrivers
 
 
-driver = webdrivers.get_geckodriver()
+driver = webdrivers.get_chromedriver()
 website_abspath = os.path.abspath("../websites/drag-and-drop/drag-and-drop.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
@@ -32,8 +32,8 @@ target1 = driver.find_element(By.ID, "target1")
 
 actions = ActionChains(driver)
 # actions.drag_and_drop(source1, target1).pause(5).perform()
-# actions.click_and_hold(source1).move_to_element(target1).pause(5).release().pause(5).perform()
-actions.click_and_hold(source1).move_by_offset(120, 55).pause(5).release().pause(5).perform()
+actions.click_and_hold(source1).move_to_element(target1).pause(5).release().pause(5).perform()
+# actions.click_and_hold(source1).move_by_offset(120, 55).pause(5).release().pause(5).perform()
 
 # Closes all the open windows and terminate the process for the driver
 driver.quit()
