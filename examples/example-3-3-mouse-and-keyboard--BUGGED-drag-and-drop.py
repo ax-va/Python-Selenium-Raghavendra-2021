@@ -1,8 +1,8 @@
 """
 Selenium has bugs with drag-and-drop and action chains:
-1) It does not work (Chrome, Firefox, Windows);
-2) Positions are determined not correctly (Chrome, Firefox, Ubuntu);
-3) release() does not work (Chrome, Firefox, Ubuntu).
+1) It does not work in Chrome and Firefox on Windows;
+2) Positions are determined not correctly in Chrome and Firefox on Ubuntu;
+3) release() does not work in Chrome and Firefox on Ubuntu.
 """
 import os
 import pathlib
