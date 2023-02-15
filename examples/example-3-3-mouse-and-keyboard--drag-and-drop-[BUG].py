@@ -1,6 +1,6 @@
 """
 Selenium has bugs with drag-and-drop:
-1) Coordinates are determined not correctly;
+1) Positions are determined not correctly;
 2) 'Release' does not work.
 """
 import os
