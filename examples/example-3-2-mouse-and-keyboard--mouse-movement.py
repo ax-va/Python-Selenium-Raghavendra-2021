@@ -24,7 +24,7 @@ driver.get("http://www.apress.com")
 time.sleep(5)
 # Find element
 menu_categories = driver.find_element(By.LINK_TEXT, "CATEGORIES")
-# Move to element to open the panel
+# Move to element to open the drop-down menu
 actions.move_to_element(menu_categories).perform()
 # Wait for sub menu to be displayed
 WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.LINK_TEXT, "Python")))
@@ -34,6 +34,18 @@ time.sleep(5)
 # Click on element
 menu_python.click()
 time.sleep(5)
+
+driver.get("http://www.apress.com")
+time.sleep(5)
+# Move to position and wait
+actions.move_by_offset(xoffset=268, yoffset=66).pause(5).perform()  # from the top-left corner
+
+driver.get("http://www.apress.com")
+time.sleep(5)
+# Find element
+menu_categories = driver.find_element(By.LINK_TEXT, "CATEGORIES")
+# Move to element with offset, wait, click, wait
+actions.move_to_element_with_offset(menu_categories, 200, 50).pause(5).click().pause(5).perform()
 
 # Closes all the open windows and terminate the process for the driver
 driver.quit()
