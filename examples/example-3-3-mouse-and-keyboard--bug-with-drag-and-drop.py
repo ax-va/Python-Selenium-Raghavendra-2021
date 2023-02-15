@@ -1,4 +1,4 @@
-# Code like below does not work:
+# Does not work:
 """
 element = driver.find_element(By.ID, "source")
 target = driver.find_element(By.ID, "target")
