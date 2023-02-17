@@ -3,6 +3,7 @@ import sys
 import time
 
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 # Get the package directory
@@ -13,19 +14,28 @@ if package_dir not in sys.path:
 
 # my modules
 import utils.webdrivers as webdrivers
-from urls.urls import WIKI_APRESS_URL
+from urls.urls import WIKI_VACUUM_POLARIZATION_URL
 
 
 driver = webdrivers.get_chromedriver()
 actions = ActionChains(driver)
-driver.get(WIKI_APRESS_URL)
+driver.get(WIKI_VACUUM_POLARIZATION_URL)
 time.sleep(5)
 actions.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).pause(5).perform()
 actions.key_down(Keys.CONTROL).send_keys("c").key_up(Keys.CONTROL).pause(5).perform()
 
-driver.get(WIKI_APRESS_URL)
+driver.get(WIKI_VACUUM_POLARIZATION_URL)
 time.sleep(5)
 actions.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).reset_actions()
 actions.perform()
+
+button_search = driver.find_element(By.XPATH, "//*[contains(@class, 'button') and contains(@class, 'search-toggle')]")
+if button_search.is_displayed():
+    actions.click(button_search).pause(5).perform()
+
+input_search = driver.find_element(By.XPATH, "//input[@name='search']")
+if input_search.is_displayed():
+    actions.send_keys_to_element(input_search, "Proton radius puzzle").pause(5).\
+        send_keys_to_element(input_search, "\n").pause(5).perform()
 
 driver.quit()
