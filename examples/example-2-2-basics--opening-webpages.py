@@ -11,9 +11,7 @@ if package_dir not in sys.path:
 
 # my modules
 import utils.webdrivers as webdrivers
-
-
-GITHUB_URL = "https://github.com/ax-va/Selenium4-Raghavendra-2021"
+from urls.urls import GITHUB_URL
 
 driver = webdrivers.get_chromedriver()
 # Open URL page

@@ -15,12 +15,13 @@ if package_dir not in sys.path:
 
 # my modules
 import utils.webdrivers as webdrivers
+from urls.urls import APRESS_URL
 
 
 driver = webdrivers.get_geckodriver()
 actions = ActionChains(driver)
 
-driver.get("http://www.apress.com")
+driver.get(APRESS_URL)
 time.sleep(5)
 # Find element
 menu_categories = driver.find_element(By.LINK_TEXT, "CATEGORIES")
@@ -35,12 +36,12 @@ time.sleep(5)
 menu_python.click()
 time.sleep(5)
 
-driver.get("http://www.apress.com")
+driver.get(APRESS_URL)
 time.sleep(5)
 # Move to position and wait
 actions.move_by_offset(xoffset=268, yoffset=66).pause(5).perform()  # from the top-left corner
 
-driver.get("http://www.apress.com")
+driver.get(APRESS_URL)
 time.sleep(5)
 # Find element
 menu_categories = driver.find_element(By.LINK_TEXT, "CATEGORIES")
