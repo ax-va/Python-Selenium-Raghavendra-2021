@@ -14,17 +14,17 @@ if package_dir not in sys.path:
 
 # my modules
 import utils.webdrivers as webdrivers
-from urls.urls import WIKI_VACUUM_POLARIZATION_URL
+from urls.urls import WIKI_URL
 
 
 driver = webdrivers.get_chromedriver()
 actions = ActionChains(driver)
-driver.get(WIKI_VACUUM_POLARIZATION_URL)
+driver.get(WIKI_URL)
 time.sleep(5)
 actions.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).pause(5).perform()
 actions.key_down(Keys.CONTROL).send_keys("c").key_up(Keys.CONTROL).pause(5).perform()
 
-driver.get(WIKI_VACUUM_POLARIZATION_URL)
+driver.get(WIKI_URL)
 time.sleep(5)
 actions.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).reset_actions()
 actions.perform()
