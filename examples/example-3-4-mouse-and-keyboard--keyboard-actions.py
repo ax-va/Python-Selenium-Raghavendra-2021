@@ -3,10 +3,7 @@ import sys
 import time
 
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as e_cs
-from selenium.webdriver.support.ui import WebDriverWait
 
 # Get the package directory
 package_dir = str(pathlib.Path(__file__).resolve().parents[1])
