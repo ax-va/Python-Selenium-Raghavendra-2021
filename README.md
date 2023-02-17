@@ -2,7 +2,7 @@
 
 Tested with versions: python 3.8+, selenium 4.8.0, webdriver-manager 3.8.5, PyAutoGUI 0.9.53
 
-## Useful links:
+## Tutorials:
 
 https://selenium-python.readthedocs.io/
 
