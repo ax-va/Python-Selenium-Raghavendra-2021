@@ -5,11 +5,11 @@ from selenium.common import JavascriptException
 
 
 class Highlighter:
-    def __init__(self, webdriver, wait_in_sec=5):
+    def __init__(self, webdriver, wait_in_sec=5, background_color="darkseagreen", border_color="lightgreen"):
         self._webdriver = webdriver
         self._wait_in_sec = wait_in_sec
-        self._background_color = "darkseagreen"
-        self._border_color = "lightgreen"
+        self._background_color = background_color
+        self._border_color = border_color
 
     @property
     def webdriver(self):
@@ -28,8 +28,8 @@ class Highlighter:
         self._wait_in_sec = value
 
     def highlight_element(self, element, background_color=None, border_color=None):
-        bg_color = self._background_color if background_color is None else background_color
-        b_color = self._border_color if border_color is None else border_color
+        bg_color = background_color or self._background_color
+        b_color = border_color or self._border_color
 
         try:
             self._webdriver.execute_script(
