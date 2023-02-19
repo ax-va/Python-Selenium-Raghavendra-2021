@@ -66,4 +66,28 @@ highlighter.highlight_element_and_wait(button_submit)
 form_employee = driver.find_element(By.XPATH, "//*[starts-with(@id, 'Employee')]")
 highlighter.highlight_element_and_wait(form_employee)
 
+driver.get("file:///" + website_abspath)
+time.sleep(5)
+
+form_employee = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm")
+highlighter.highlight_element_and_wait(form_employee)
+
+input_first = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm input")
+highlighter.highlight_element_and_wait(input_first)
+
+# Find element if:
+# it is the 2nd "input" child of the parent
+input_second = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm input:nth-of-type(2)")
+highlighter.highlight_element_and_wait(input_second)
+
+# Find element if:
+# 1) it is an "input" element;
+# 2) it is the 3rd child of the parent
+input_second = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm input:nth-child(3)")  # the same element as above
+# Highlight with another color
+highlighter.highlight_element_and_wait(input_second, background_color="peachpuff")
+
+button_submit = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm *:last-child")
+highlighter.highlight_element_and_wait(button_submit)
+
 driver.quit()
