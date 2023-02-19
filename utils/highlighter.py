@@ -30,7 +30,6 @@ class Highlighter:
     def highlight_element(self, element, background_color=None, border_color=None):
         bg_color = background_color or self._background_color
         b_color = border_color or self._border_color
-
         try:
             self._webdriver.execute_script(
                 f"arguments[0].setAttribute('style', 'background: {bg_color}; border: 2px solid {b_color};');",
@@ -39,6 +38,7 @@ class Highlighter:
         except JavascriptException as e:
             logging.warning(str(e))
 
-    def highlight_element_and_wait(self, element, background_color=None, border_color=None):
+    def highlight_element_and_wait(self, element, wait_in_sec=None, background_color=None, border_color=None):
         self.highlight_element(element, background_color, border_color)
-        time.sleep(self._wait_in_sec)
+        wait_in_sec = wait_in_sec or self._wait_in_sec
+        time.sleep(wait_in_sec)

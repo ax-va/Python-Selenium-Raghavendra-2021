@@ -10,8 +10,8 @@ if package_dir not in sys.path:
 
 # my modules
 import utils.webdrivers as webdrivers
-from urls.urls import GITHUB_URL
-from urls.urls import GOOGLE_URL
+from webpages.urls import GITHUB_URL
+from webpages.urls import GOOGLE_URL
 
 driver = webdrivers.get_chromedriver()
 # Open my GitHub URL

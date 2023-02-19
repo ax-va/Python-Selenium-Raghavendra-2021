@@ -14,7 +14,7 @@ if package_dir not in sys.path:
 
 # my modules
 import utils.webdrivers as webdrivers
-from urls.urls import WIKI_URL
+from webpages.urls import WIKI_URL
 
 
 driver = webdrivers.get_chromedriver()
