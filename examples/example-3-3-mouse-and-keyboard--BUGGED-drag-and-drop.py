@@ -22,7 +22,7 @@ if package_dir not in sys.path:
 import utils.webdrivers as webdrivers
 
 
-website_abspath = os.path.abspath("../websites/drag-and-drop/drag-and-drop.html")
+website_abspath = os.path.abspath("../webpages/drag-and-drop/drag-and-drop.html")
 driver = webdrivers.get_chromedriver()
 actions = ActionChains(driver)
 driver.get("file:///" + website_abspath)

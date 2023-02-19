@@ -18,7 +18,7 @@ driver = webdrivers.get_chromedriver()
 driver.get(GITHUB_URL)
 time.sleep(5)
 # Open FILE page
-website_abspath = os.path.abspath("../websites/website/index.html")
+website_abspath = os.path.abspath("../webpages/webpage/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
 # Closes all the open windows and terminate the process for the driver
