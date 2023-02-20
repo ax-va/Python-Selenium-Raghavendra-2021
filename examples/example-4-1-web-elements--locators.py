@@ -85,9 +85,9 @@ highlighter.highlight_and_wait(input_second)
 # 2) it is the 3rd child of the parent
 input_second = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm input:nth-child(3)")  # the same element as above
 # Highlight with another color
-highlighter.highlight_and_wait(input_second, background_color="peachpuff")
+highlighter.highlight_and_wait(input_second, background="peachpuff")
 
 button_submit = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm *:last-child")
-highlighter.highlight_and_wait(button_submit)
+highlighter.highlight_and_wait(button_submit, background=False)
 
 driver.quit()
