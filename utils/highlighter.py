@@ -28,11 +28,11 @@ class Highlighter:
         self._wait_in_sec = value
 
     def highlight(self, element, background=None, border=None):
-        background_code = "" if background is False else f"background: {background or self._background};"
-        border_code = "" if border is False else f"border: {border or self._border};"
-        style_code = background_code + border_code
+        background_value = "" if background is False else f"background: {background or self._background};"
+        border_value = "" if border is False else f"border: {border or self._border};"
+        style_value = background_value + border_value
         try:
-            self._webdriver.execute_script(f"arguments[0].setAttribute('style', '{style_code}');", element)
+            self._webdriver.execute_script(f"arguments[0].setAttribute('style', '{style_value}');", element)
         except JavascriptException as e:
             logging.warning(str(e))
 
