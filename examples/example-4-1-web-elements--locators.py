@@ -88,6 +88,6 @@ input_second = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm input:nth-chi
 highlighter.highlight_and_wait(input_second, background="peachpuff")
 
 button_submit = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm *:last-child")
-highlighter.highlight_and_wait(button_submit, background=False)
+highlighter.highlight_and_wait(button_submit)
 
 driver.quit()
