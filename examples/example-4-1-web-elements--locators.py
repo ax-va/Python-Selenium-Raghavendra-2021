@@ -38,7 +38,7 @@ highlighter.highlight_and_wait(input_next)
 input_location = driver.find_element(By.XPATH, "/html/body/form/input[5]")
 highlighter.highlight_and_wait(input_location)
 
-input_lname = driver.find_element(By.XPATH, "//form//input[2]")
+input_lname = driver.find_element(By.XPATH, "//form/input[2]")
 highlighter.highlight_and_wait(input_lname)
 
 driver.get("file:///" + website_abspath)
