@@ -77,7 +77,7 @@ highlighter.highlight_element_and_wait(input_first)
 
 # Find element if:
 # it is the 2nd "input" child of the parent
-input_second = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm input:nth-of-type(2)")
+input_second = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm input:nth-of-type(2)")  # the same element as below
 highlighter.highlight_element_and_wait(input_second)
 
 # Find element if:
