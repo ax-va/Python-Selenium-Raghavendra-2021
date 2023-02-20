@@ -27,7 +27,7 @@ class Highlighter:
     def wait_in_sec(self, value):
         self._wait_in_sec = value
 
-    def highlight_element(self, element, background_color=None, border_color=None):
+    def highlight(self, element, background_color=None, border_color=None):
         bg_color = background_color or self._background_color
         b_color = border_color or self._border_color
         try:
@@ -38,7 +38,7 @@ class Highlighter:
         except JavascriptException as e:
             logging.warning(str(e))
 
-    def highlight_element_and_wait(self, element, wait_in_sec=None, background_color=None, border_color=None):
-        self.highlight_element(element, background_color, border_color)
+    def highlight_and_wait(self, element, wait_in_sec=None, background_color=None, border_color=None):
+        self.highlight(element, background_color, border_color)
         wait_in_sec = wait_in_sec or self._wait_in_sec
         time.sleep(wait_in_sec)
