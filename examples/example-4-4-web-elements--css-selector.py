@@ -57,7 +57,6 @@ highlighter.highlight_and_wait(element)
 element = driver.find_element(By.CSS_SELECTOR, ".my-class")
 highlighter.highlight_and_wait(element)
 element = driver.find_element(By.CSS_SELECTOR, ".text-justify")
-# Highlight with another color
 highlighter.highlight_and_wait(element, background="peachpuff")
 element = driver.find_element(By.CSS_SELECTOR, ".my-class.text-justify")
 highlighter.highlight_and_wait(element)
