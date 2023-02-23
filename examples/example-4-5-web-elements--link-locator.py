@@ -28,4 +28,7 @@ highlighter.highlight_and_wait(anchor1)
 anchor2 = driver.find_element(By.LINK_TEXT, "Database")
 highlighter.highlight_and_wait(anchor2)
 
+# anchor3 = driver.find_element(By.LINK_TEXT, "python")
+# selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: ...
+
 driver.quit()
