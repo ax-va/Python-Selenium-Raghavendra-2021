@@ -22,6 +22,7 @@ website_abspath = os.path.abspath("../webpages/apress/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
 
+# CSS selector is used
 class1 = driver.find_element(By.CLASS_NAME, "press")
 highlighter.highlight_and_wait(class1)
 class2 = driver.find_element(By.CLASS_NAME, "my-class")
