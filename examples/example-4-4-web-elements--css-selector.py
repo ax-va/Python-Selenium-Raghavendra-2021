@@ -17,7 +17,7 @@ from utils.highlighter import Highlighter
 
 
 driver = webdrivers.get_chromedriver()
-highlighter = Highlighter(driver, wait_in_sec=2)
+highlighter = Highlighter(driver)
 website_abspath = os.path.abspath("../webpages/employee-form/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
@@ -40,7 +40,7 @@ highlighter.highlight_and_wait(input_second)
 # 2) it is the 3rd child of the parent
 input_second = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm input:nth-child(3)")  # the same element as above
 # Highlight with another color
-highlighter.highlight_and_wait(input_second, background="peachpuff")
+highlighter.highlight_and_wait(input_second)
 
 button_submit = driver.find_element(By.CSS_SELECTOR, "#EmployeeForm *:last-child")
 highlighter.highlight_and_wait(button_submit)
@@ -57,7 +57,7 @@ highlighter.highlight_and_wait(element)
 element = driver.find_element(By.CSS_SELECTOR, ".my-class")
 highlighter.highlight_and_wait(element)
 element = driver.find_element(By.CSS_SELECTOR, ".text-justify")
-highlighter.highlight_and_wait(element, background="peachpuff")
+highlighter.highlight_and_wait(element)
 element = driver.find_element(By.CSS_SELECTOR, ".my-class.text-justify")
 highlighter.highlight_and_wait(element)
 
@@ -69,7 +69,7 @@ element = driver.find_element(By.CSS_SELECTOR, "p[id$='123']")
 highlighter.highlight_and_wait(element)
 # To find with substring
 element = driver.find_element(By.CSS_SELECTOR, "p[id*='_apress_']")
-highlighter.highlight_and_wait(element, background="peachpuff")
+highlighter.highlight_and_wait(element)
 
 # To find with many attributes
 element = driver.find_element(By.CSS_SELECTOR, "p[class='container'][id='apress'][style='align-self:center;']")

@@ -5,10 +5,14 @@ from selenium.common import JavascriptException
 
 
 class Highlighter:
-    def __init__(self, webdriver, wait_in_sec=5, background="darkseagreen", border="2px solid lightgreen"):
+    def __init__(self,
+                 webdriver,
+                 wait_in_sec=2,
+                 backgrounds=("darkseagreen", "peachpuff", "pink"),
+                 border="2px solid lightgreen"):
         self._webdriver = webdriver
         self._wait_in_sec = wait_in_sec
-        self._background = background
+        self._backgrounds = backgrounds
         self._border = border
 
     @property
@@ -27,16 +31,33 @@ class Highlighter:
     def wait_in_sec(self, value):
         self._wait_in_sec = value
 
-    def highlight(self, element, background=None, border=None):
-        background_value = "" if background is False else f"background: {background or self._background};"
-        border_value = "" if border is False else f"border: {border or self._border};"
-        style_value = background_value + border_value
+    def highlight(self, element):
+        background = self._get_next_background(element)
+        background_values = f"background: {background};"
+        border_values = f"border: {self._border};"
+        style_values = background_values + border_values
         try:
-            self._webdriver.execute_script(f"arguments[0].setAttribute('style', '{style_value}');", element)
+            self._webdriver.execute_script(f"arguments[0].setAttribute('style', '{style_values}');", element)
         except JavascriptException as e:
             logging.warning(str(e))
 
-    def highlight_and_wait(self, element, wait_in_sec=None, background=None, border=None):
-        self.highlight(element, background, border)
+    def highlight_and_wait(self, element, wait_in_sec=None):
+        self.highlight(element)
         wait_in_sec = wait_in_sec or self._wait_in_sec
         time.sleep(wait_in_sec)
+
+    def _get_next_background(self, element):
+        background = self._backgrounds[0]
+        style_attribute = element.get_attribute("style")
+        if style_attribute:
+            attr_list = [attr.strip() for attr in style_attribute.split(";")][:-1]
+            attr_dict = dict(tuple(attr.split(": ")) for attr in attr_list)
+            current_background = attr_dict.get("background")
+            if current_background:
+                for index, bgd in enumerate(self._backgrounds):
+                    if current_background == bgd:
+                        next_index = index + 1
+                        if next_index != len(self._backgrounds):
+                            background = self._backgrounds[next_index]
+                        break
+        return background

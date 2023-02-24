@@ -17,7 +17,7 @@ from utils.highlighter import Highlighter
 
 
 driver = webdrivers.get_chromedriver()
-highlighter = Highlighter(driver, wait_in_sec=2)
+highlighter = Highlighter(driver)
 website_abspath = os.path.abspath("../webpages/apress/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
@@ -28,7 +28,7 @@ highlighter.highlight_and_wait(class1)
 class2 = driver.find_element(By.CLASS_NAME, "my-class")
 highlighter.highlight_and_wait(class2)
 class2 = driver.find_element(By.CLASS_NAME, "text-justify")
-highlighter.highlight_and_wait(class2, background="peachpuff")
+highlighter.highlight_and_wait(class2)
 class3 = driver.find_element(By.CLASS_NAME, "my-class.text-justify")
 highlighter.highlight_and_wait(class3)
 

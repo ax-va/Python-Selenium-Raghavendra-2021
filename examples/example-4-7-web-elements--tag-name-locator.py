@@ -17,7 +17,7 @@ from utils.highlighter import Highlighter
 
 
 driver = webdrivers.get_chromedriver()
-highlighter = Highlighter(driver, wait_in_sec=2)
+highlighter = Highlighter(driver)
 website_abspath = os.path.abspath("../webpages/apress/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
