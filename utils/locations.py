@@ -1,3 +1,7 @@
+"""
+Hardcoded browser and webdriver locations in a dictionary
+"""
+
 LOCATIONS = \
     {
         "win32":
