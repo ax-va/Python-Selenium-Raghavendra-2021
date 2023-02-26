@@ -33,7 +33,9 @@ class Highlighter:
         self._wait_in_sec = value
 
     def highlight(self, element):
-        """ Highlights an element by a colored border and alternating background colors """
+        """
+        Highlights an element by a colored border and alternating background colors
+        """
         style_attrs = self._create_style_attrs(element)
         try:
             self._webdriver.execute_script(f"arguments[0].setAttribute('style', '{style_attrs}');", element)
@@ -41,7 +43,10 @@ class Highlighter:
             logging.warning(str(e))
 
     def highlight_and_wait(self, element, wait_in_sec=None):
-        """ Highlights an element by a colored border and alternating background colors. Then wait several seconds. """
+        """
+        Highlights an element by a colored border and alternating background colors.
+        Then wait several seconds.
+        """
         self.highlight(element)
         wait_in_sec = wait_in_sec or self._wait_in_sec
         time.sleep(wait_in_sec)
