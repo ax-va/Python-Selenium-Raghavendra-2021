@@ -33,6 +33,8 @@ radio_button_female = driver.find_element(By.ID, "female")
 radio_button_female.click()
 time.sleep(5)
 
+assert radio_button_female.get_attribute("type") == "radio"  # correct
+assert radio_button_other.get_attribute("type") == "radio"  # correct
 assert radio_button_female.is_selected() is True  # correct
 assert radio_button_female.get_attribute("checked") == "true"  # correct
 assert radio_button_other.is_selected() is False  # correct
