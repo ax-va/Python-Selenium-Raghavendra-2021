@@ -5,7 +5,9 @@ from selenium.common import JavascriptException
 
 
 class Highlighter:
-    """ Highlights an element by a colored border and alternating background colors """
+    """
+    Highlights an element by a colored border and alternating background colors
+    """
     def __init__(self,
                  webdriver,
                  wait_in_sec=2,
