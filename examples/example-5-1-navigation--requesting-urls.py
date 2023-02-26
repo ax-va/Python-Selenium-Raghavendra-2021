@@ -21,10 +21,19 @@ driver.get(WIKI_URL)
 time.sleep(5)
 
 anchors = driver.find_elements(By.CSS_SELECTOR, "a")
-for anchor in anchors[:20]:
+print("Checking for href URLs:")
+for index, anchor in enumerate(anchors[:20]):
     url = anchor.get_attribute('href')
     response = requests.head(url)
-    print(f"Status code of requesting {url} received: {response.status_code}")
+    print(f"{index} \tStatus code of requesting {url} received: {response.status_code}")
+
+images = driver.find_elements(By.CSS_SELECTOR, "img")
+print("Checking for image URLs:")
+for index, image in enumerate(images[:20]):
+    url = image.get_attribute('src')
+    response = requests.head(url)
+    print(f"{index} \tStatus code of requesting {url} received: {response.status_code}")
+
 # HTTP Code     Description
 # 200           Valid Link
 # 302           URL Redirection
