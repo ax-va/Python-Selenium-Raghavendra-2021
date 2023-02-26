@@ -33,6 +33,7 @@ class Highlighter:
         self._wait_in_sec = value
 
     def highlight(self, element):
+        """ Highlights an element by a colored border and alternating background colors """
         background = self._get_next_background(element)
         background_attr = f"background: {background};"
         border_attr = f"border: {self._border};"
