@@ -23,14 +23,8 @@ driver.get("file:///" + website_abspath)
 time.sleep(5)
 
 # Locate elements using partial link text
-anchor1 = driver.find_element(By.PARTIAL_LINK_TEXT, "Py")
-highlighter.highlight_and_wait(anchor1)
-anchor2 = driver.find_element(By.PARTIAL_LINK_TEXT, "taba")
-highlighter.highlight_and_wait(anchor2)
-
-# anchor3 = driver.find_element(By.LINK_TEXT, "py")
-# selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: ...
-# anchor4 = driver.find_element(By.LINK_TEXT, "taBa")
-# selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: ...
+anchor = driver.find_element(By.PARTIAL_LINK_TEXT, "Python")
+highlighter.highlight_and_wait(anchor)
+assert anchor.text == "Python"
 
 driver.quit()
