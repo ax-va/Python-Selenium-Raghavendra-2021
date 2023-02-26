@@ -14,11 +14,9 @@ if package_dir not in sys.path:
 
 # my modules
 import utils.webdrivers as webdrivers
-from utils.highlighter import Highlighter
 
 
 driver = webdrivers.get_chromedriver()
-highlighter = Highlighter(driver)
 actions = ActionChains(driver)
 website_abspath = os.path.abspath("../webpages/buttons/index.html")
 driver.get("file:///" + website_abspath)
