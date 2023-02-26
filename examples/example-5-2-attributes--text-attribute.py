@@ -25,6 +25,6 @@ time.sleep(5)
 # Locate elements using partial link text
 anchor = driver.find_element(By.PARTIAL_LINK_TEXT, "Python")
 highlighter.highlight_and_wait(anchor)
-assert anchor.text == "Python"
+assert anchor.text == "Python"  # correct
 
 driver.quit()
