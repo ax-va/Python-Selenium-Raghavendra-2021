@@ -37,8 +37,8 @@ if default_button.is_enabled():
     print("Default Button is enabled")
 else:
     print("Default Button is not enabled")
-# Is the button displayed?
 
+# Is the button displayed?
 if submit_button.is_displayed():
     print("Submit Button is present")
 else:
