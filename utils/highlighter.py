@@ -53,12 +53,10 @@ class Highlighter:
         if style_attribute:
             attr_list = [attr.strip() for attr in style_attribute.split(";")][:-1]
             attr_dict = dict(tuple(attr.split(": ")) for attr in attr_list)
-            current_background = attr_dict.get("background")
-            if current_background:
-                for index, bgd in enumerate(self._backgrounds):
-                    if current_background == bgd:
-                        next_index = index + 1
-                        if next_index != len(self._backgrounds):
-                            background = self._backgrounds[next_index]
-                        break
+            try:
+                current_background = attr_dict["background"]
+                index = self._backgrounds.index(current_background)
+                background = self._backgrounds[index + 1]
+            except {KeyError, ValueError, IndexError}:
+                return background
         return background
