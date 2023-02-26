@@ -57,12 +57,14 @@ driver.find_element(By.ID, "default_btn").click()  # returns None
 time.sleep(5)
 # click 3
 actions.move_to_element(default_button).pause(5).click().pause(5).perform()
-# click 4
+
 default_button = driver.find_element(By.XPATH, "//button[text()='Default Button']")
+# click 4
 default_button.click()  # returns None
 time.sleep(5)
-# click 5
+
 default_button = driver.find_element(By.NAME, "dft_btn")
+# click 5
 default_button.click()  # returns None
 time.sleep(5)
 
