@@ -22,7 +22,7 @@ time.sleep(5)
 
 anchors = driver.find_elements(By.CSS_SELECTOR, "a")
 print("Checking for href URLs:")
-for index, anchor in enumerate(anchors[:20]):
+for index, anchor in enumerate(anchors[:15]):
     url = anchor.get_attribute('href')
     response = requests.head(url)
     print(f"{index} \tStatus code of requesting {url} received: {response.status_code}")
@@ -42,15 +42,10 @@ for index, anchor in enumerate(anchors[:20]):
 # 12 	Status code of requesting https://en.wikipedia.org/wiki/Portal:Current_events received: 200
 # 13 	Status code of requesting https://en.wikipedia.org/wiki/Special:Random received: 302
 # 14 	Status code of requesting https://en.wikipedia.org/wiki/Wikipedia:About received: 200
-# 15 	Status code of requesting https://en.wikipedia.org/wiki/Wikipedia:Contact_us received: 200
-# 16 	Status code of requesting https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&utm_medium=sidebar&utm_campaign=C13_en.wikipedia.org&uselang=en received: 302
-# 17 	Status code of requesting https://en.wikipedia.org/wiki/Help:Contents received: 200
-# 18 	Status code of requesting https://en.wikipedia.org/wiki/Help:Introduction received: 200
-# 19 	Status code of requesting https://en.wikipedia.org/wiki/Wikipedia:Community_portal received: 200
 
 images = driver.find_elements(By.CSS_SELECTOR, "img")
 print("Checking for image URLs:")
-for index, image in enumerate(images[:20]):
+for index, image in enumerate(images[:15]):
     url = image.get_attribute('src')
     response = requests.head(url)
     print(f"{index} \tStatus code of requesting {url} received: {response.status_code}")
@@ -70,11 +65,6 @@ for index, image in enumerate(images[:20]):
 # 12 	Status code of requesting https://wikimedia.org/api/rest_v1/media/math/render/svg/71a8fe7fb4923d0344a5e464c47d62c3b1c454d9 received: 200
 # 13 	Status code of requesting https://wikimedia.org/api/rest_v1/media/math/render/svg/b79333175c8b3f0840bfb4ec41b8072c83ea88d3 received: 200
 # 14 	Status code of requesting https://wikimedia.org/api/rest_v1/media/math/render/svg/20787b696b880d088ce7ae95428712d9cd9386fc received: 200
-# 15 	Status code of requesting https://wikimedia.org/api/rest_v1/media/math/render/svg/e630f7dad756cd34a82af890b7ec420c9886def0 received: 200
-# 16 	Status code of requesting https://wikimedia.org/api/rest_v1/media/math/render/svg/a397ccc989f3ade38eb87ef2d364590f8dcf9428 received: 200
-# 17 	Status code of requesting https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Symbol_template_class.svg/16px-Symbol_template_class.svg.png received: 200
-# 18 	Status code of requesting https://en.wikipedia.org/static/images/footer/wikimedia-button.png received: 200
-# 19 	Status code of requesting https://en.wikipedia.org/static/images/footer/poweredby_mediawiki_88x31.png received: 200
 
 # HTTP Code     Description
 # 200           Valid Link
