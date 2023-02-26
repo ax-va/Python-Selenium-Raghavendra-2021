@@ -34,11 +34,12 @@ class Highlighter:
 
     def highlight(self, element):
         background = self._get_next_background(element)
-        background_values = f"background: {background};"
-        border_values = f"border: {self._border};"
-        style_values = background_values + border_values
+        background_attr = f"background: {background};"
+        border_attr = f"border: {self._border};"
+        style_attrs = element.get_attribute("style")
+        style_attrs = background_attr + border_attr + style_attrs
         try:
-            self._webdriver.execute_script(f"arguments[0].setAttribute('style', '{style_values}');", element)
+            self._webdriver.execute_script(f"arguments[0].setAttribute('style', '{style_attrs}');", element)
         except JavascriptException as e:
             logging.warning(str(e))
 
@@ -57,6 +58,6 @@ class Highlighter:
                 current_background = attr_dict["background"]
                 index = self._backgrounds.index(current_background)
                 background = self._backgrounds[index + 1]
-            except {KeyError, ValueError, IndexError}:
+            except (KeyError, ValueError, IndexError):
                 return background
         return background
