@@ -21,6 +21,45 @@ if package_dir not in sys.path:
 # my modules
 import utils.webdrivers as webdrivers
 
+HTML_CODE = """
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style type="text/css">
+            #myTarget {
+              width: 100px;
+              height: 100px;
+              padding: 10px;
+              border: 1px solid #aaaaaa;
+            }
+        </style>
+        <script type="text/javascript">
+            function dragOver(ev) {
+              ev.preventDefault();
+            }
+
+            function drag(ev) {
+              ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            function drop(ev) {
+              ev.preventDefault();
+              var data = ev.dataTransfer.getData("text");
+              ev.target.appendChild(document.getElementById(data));
+            }
+        </script>
+    </head>
+    <body>
+        <p>Drag the image into the rectangle:</p>
+        <div id="myTarget" ondrop="drop(event)" ondragover="dragOver(event)"></div>
+        <br/>
+        <img id="mySource" src="img.png" draggable="true" ondragstart="drag(event)" width="100" height="100"/>
+    </body>
+</html>
+"""
+
+with open("../webpages/drag-and-drop/drag-and-drop.html", "w") as f:
+    f.write(HTML_CODE)
 
 website_abspath = os.path.abspath("../webpages/drag-and-drop/drag-and-drop.html")
 driver = webdrivers.get_chromedriver()

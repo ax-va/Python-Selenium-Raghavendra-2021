@@ -16,6 +16,32 @@ import utils.webdrivers as webdrivers
 from utils.highlighter import Highlighter
 
 
+HTML_CODE = """
+<!DOCTYPE html>
+<html>
+    <body>
+        <form id="EmployeeForm">
+            <input name="fname" type="text" value="First Name"/>
+            <br/>
+            <input name="lname" type="text" value="Last Name"/>
+            <br/>
+            <input name="email" type="email" value="Email"/>
+            <br/>
+            <input name="password" type="password" value="Password"/>
+            <br/>
+            <input name="location" type="text" value="Location"/>
+            <br/>
+            <input name="next" type="submit" value="Login"/>
+            <input name="next" type="button" value="Clear"/>
+            <button type="button">Submit</button>
+        </form>
+    </body>
+</html>
+"""
+
+with open("../webpages/employee-form/index.html", "w") as f:
+    f.write(HTML_CODE)
+
 driver = webdrivers.get_chromedriver()
 highlighter = Highlighter(driver)
 website_abspath = os.path.abspath("../webpages/employee-form/index.html")

@@ -16,6 +16,27 @@ import utils.webdrivers as webdrivers
 from utils.highlighter import Highlighter
 
 
+HTML_CODE = """
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="container">Categories
+            <a href="python.html">Python</a>
+            <a href="web.html">Web Development</a>
+            <a href="machine.html">Machine Learning</a>
+            <a href="databases.html">Database</a>
+        </div>
+    </body>
+</html>
+"""
+
+with open("../webpages/categories-links/index.html", "w") as f:
+    f.write(HTML_CODE)
+
 driver = webdrivers.get_chromedriver()
 highlighter = Highlighter(driver)
 website_abspath = os.path.abspath("../webpages/categories-links/index.html")

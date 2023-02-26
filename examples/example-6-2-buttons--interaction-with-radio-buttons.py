@@ -16,6 +16,34 @@ if package_dir not in sys.path:
 import utils.webdrivers as webdrivers
 
 
+HTML_CODE = """
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Radio Buttons</title>
+    </head>
+    <body>
+        <h3>Select your gender:</h3>
+            <div>
+                <input type="radio" id="male" name="gender" value="g1" checked/>
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="female" name="gender" value="g2"/>
+                <label for="female">Female</label>
+            </div>
+            <div>
+                <input type="radio" id="other" name="gender" value="g3"/>
+                <label for="other">Diverse</label>
+            </div>
+    </body>
+</html>
+"""
+
+with open("../webpages/radio-buttons/index.html", "w") as f:
+    f.write(HTML_CODE)
+
 driver = webdrivers.get_chromedriver()
 website_abspath = os.path.abspath("../webpages/radio-buttons/index.html")
 driver.get("file:///" + website_abspath)

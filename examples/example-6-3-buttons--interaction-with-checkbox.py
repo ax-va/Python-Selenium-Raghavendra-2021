@@ -16,6 +16,36 @@ if package_dir not in sys.path:
 import utils.webdrivers as webdrivers
 
 
+HTML_CODE = """
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Checkbox</title>
+    </head>
+    <body>
+        <h3>Browsers:</h3>
+        <form>
+            <input type="checkbox" id="firefox" name="browser" value="b1" checked/>
+            <label for="firefox">Firefox</label>
+            <br/>
+            <input type="checkbox" id="chrome" name="browser" value="b2"/>
+            <label for="chrome">Chrome</label>
+            <br/>
+            <input type="checkbox" id="opera" name="browser" value="b3"/>
+            <label for="opera">Opera</label>
+            <br/>
+            <input type="checkbox" id="edge" name="browser" value="b4"/>
+            <label for="edge">Edge</label>
+            <br/>
+        </form>
+    </body>
+</html>
+"""
+
+with open("../webpages/checkbox/index.html", "w") as f:
+    f.write(HTML_CODE)
+
 driver = webdrivers.get_chromedriver()
 website_abspath = os.path.abspath("../webpages/checkbox/index.html")
 driver.get("file:///" + website_abspath)

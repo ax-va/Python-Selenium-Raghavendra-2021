@@ -17,6 +17,30 @@ driver = webdrivers.get_chromedriver()
 # Open URL page
 driver.get(GITHUB_URL)
 time.sleep(5)
+
+HTML_CODE = """
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Webpage</title>
+</head>
+    <body>
+        This is <b><i>webpage</i></b>
+        <h1>Font size</h1>
+        <h2>Font size</h2>
+        <h3>Font size</h3>
+        <h4>Font size</h4>
+        <h5>Font size</h5>
+        <h6>Font size</h6>
+    </body>
+</html>
+"""
+
+with open("../webpages/webpage/index.html", "w") as f:
+    f.write(HTML_CODE)
+
 # Open FILE page
 website_abspath = os.path.abspath("../webpages/webpage/index.html")
 driver.get("file:///" + website_abspath)
