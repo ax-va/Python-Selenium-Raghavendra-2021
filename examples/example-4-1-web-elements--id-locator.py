@@ -22,8 +22,8 @@ website_abspath = os.path.abspath("../webpages/employee-form/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
 
-# find_element(...) returns a first found element with a given locator, otherwise it throws an exception.
-# find_elements(...) returns all found elements in a list with a given locator.
+# find_element(...) returns a first found element by a given locator, otherwise it throws an exception.
+# find_elements(...) returns all found elements in a list by a given locator.
 # If there are no such elements, the list is empty.
 
 form_employee = driver.find_element(By.ID, "EmployeeForm")
