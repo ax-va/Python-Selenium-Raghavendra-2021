@@ -18,7 +18,7 @@ from utils.highlighter import Highlighter
 
 driver = webdrivers.get_chromedriver()
 highlighter = Highlighter(driver)
-website_abspath = os.path.abspath("../webpages/categories/index.html")
+website_abspath = os.path.abspath("../webpages/categories-links/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
 

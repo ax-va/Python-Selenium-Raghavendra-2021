@@ -25,22 +25,25 @@ driver.get("file:///" + website_abspath)
 time.sleep(5)
 
 default_button = driver.find_element(By.ID, "default_btn")
+submit_button = driver.find_element(By.XPATH, "//*[@type='submit']")
+
+# Is the button displayed?
 if default_button.is_displayed():
     print("Default Button is present")
 else:
     print("Default Button is not present")
-
+# Is the button clickable?
 if default_button.is_enabled():
     print("Default Button is enabled")
 else:
     print("Default Button is not enabled")
+# Is the button displayed?
 
-submit_button = driver.find_element(By.XPATH, "//*[@type='submit']")
 if submit_button.is_displayed():
     print("Submit Button is present")
 else:
     print("Submit Button is not present")
-
+# Is the button clickable?
 if submit_button.is_enabled():
     print("Submit Button is enabled")
 else:
