@@ -69,7 +69,7 @@ class Highlighter:
         # Update values
         style_dict["background"] = self._get_next_background(element)
         style_dict["border"] = self._border
-        # Get string
+        # Get style attributes as string
         style_attrs = ";".join([f"{key}:{value}" for key, value in style_dict.items()]) + ";"
         return style_attrs
 
