@@ -33,11 +33,11 @@ HTML_CODE = """
             <option value="dragonfruit">Dragon Fruit</option>
             <option value="elderberry">Elderberry</option>
             <option value="figs">Figs Fruit</option>
-            <option value="grapes"> Grapes</option>
+            <option value="grapes">Grapes</option>
         </select>
         <br/>
         <p>For Windows and Linux, hold the Ctrl button while selecting options. 
-        For Mac, hold the Command button while selecting options.</p>
+        For MacOS, hold the Command button while selecting options.</p>
     </body>
 </html>
 """
@@ -92,7 +92,7 @@ for selected_option in multiple_select_list.all_selected_options:
 multiple_select_list.deselect_all()
 time.sleep(5)
 
-# Verify if there are no selected options
-assert multiple_select_list.all_selected_options == []
+# Verify if there are no selected options (the list of selected options is empty)
+assert not multiple_select_list.all_selected_options
 
 driver.quit()
