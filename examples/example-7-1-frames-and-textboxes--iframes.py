@@ -25,21 +25,21 @@ HTML_CODE = """
     <body>
         <div>
             <h5>IFrame0</h5>
-            <iframe id="iframe0" name="apress" src="https://www.apress.com" height="600" width="600"></iframe>
+            <iframes id="iframe0" name="apress" src="https://www.apress.com" height="600" width="600"></iframes>
         </div>
         <div>
             <h5>IFrame1</h5>
-            <iframe id="iframe1" name="wiki" src="https://www.wikipedia.org" height="600" width="600"></iframe>
+            <iframes id="iframe1" name="wiki" src="https://www.wikipedia.org" height="600" width="600"></iframes>
         </div>
     </body>
 </html>
 """
 
-with open("../webpages/iframe/index.html", "w") as f:
+with open("../webpages/iframes/index.html", "w") as f:
     f.write(HTML_CODE)
 
 driver = webdrivers.get_chromedriver()
-website_abspath = os.path.abspath("../webpages/iframe/index.html")
+website_abspath = os.path.abspath("../webpages/iframes/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
 
@@ -79,12 +79,12 @@ driver.switch_to.frame(1)
 driver.switch_to.parent_frame()
 
 # Switch to frame with WebElement
-driver.switch_to.frame(driver.find_element(By.XPATH, "//iframe[@src='https://www.apress.com']"))
+driver.switch_to.frame(driver.find_element(By.XPATH, "//iframes[@src='https://www.apress.com']"))
 # Switch to the parent frame
 driver.switch_to.parent_frame()
 
 # Switch to frame with WebElement
-driver.switch_to.frame(driver.find_element(By.XPATH, "//iframe[@src='https://www.wikipedia.org']"))
+driver.switch_to.frame(driver.find_element(By.XPATH, "//iframes[@src='https://www.wikipedia.org']"))
 # Switch to the parent frame
 driver.switch_to.parent_frame()
 
