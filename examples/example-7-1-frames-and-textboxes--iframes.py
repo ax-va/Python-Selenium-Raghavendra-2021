@@ -53,11 +53,6 @@ driver.switch_to.frame("wiki")
 # Switch to the parent frame
 driver.switch_to.parent_frame()
 
-# Switch to the frame with name
-driver.switch_to.frame("wiki")
-# Switch to the parent frame
-driver.switch_to.parent_frame()
-
 # Switch to the frame with id
 driver.switch_to.frame("iframe0")
 # Switch to the parent frame
