@@ -85,12 +85,15 @@ driver.switch_to.frame(driver.find_element(By.XPATH, "//iframe[@src='https://www
 # Switch to the parent frame
 driver.switch_to.parent_frame()
 
+# Wait for loading an iframe before to switch to it
 driver.get("file:///" + website_abspath)
 WebDriverWait(driver, 5).until(e_cs.frame_to_be_available_and_switch_to_it("apress"))
 
+# Wait for loading an iframe before to switch to it
 driver.get("file:///" + website_abspath)
 WebDriverWait(driver, 5).until(e_cs.frame_to_be_available_and_switch_to_it("iframe0"))
 
+# Wait for loading an iframe before to switch to it
 driver.get("file:///" + website_abspath)
 WebDriverWait(driver, 5).until(
     e_cs.frame_to_be_available_and_switch_to_it(
@@ -98,6 +101,7 @@ WebDriverWait(driver, 5).until(
     )
 )
 
+# Wait for loading an iframe before to switch to it
 driver.get("file:///" + website_abspath)
 WebDriverWait(driver, 5).until(
     e_cs.frame_to_be_available_and_switch_to_it(
