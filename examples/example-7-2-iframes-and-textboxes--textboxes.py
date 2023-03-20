@@ -42,6 +42,7 @@ website_abspath = os.path.abspath("../webpages/textboxes/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
 
+# Input text to textboxes
 input_book_name = driver.find_element(By.ID, "book1")
 input_book_name.send_keys("Selenium")
 time.sleep(5)
@@ -49,5 +50,12 @@ time.sleep(5)
 textarea_book_name = driver.find_element(By.ID, "book2")
 textarea_book_name.send_keys("Selenium Selenium \n Selenium")
 time.sleep(5)
+
+# Get textboxes' values
+input_book_name_value = input_book_name.get_property("value")
+assert input_book_name_value == "Selenium"
+
+textarea_book_name_value = textarea_book_name.get_property("value")
+assert textarea_book_name_value == "Selenium Selenium \n Selenium"
 
 driver.quit()
