@@ -18,6 +18,9 @@ driver = webdrivers.get_chromedriver()
 driver.get(GITHUB_URL)
 time.sleep(5)
 
+# Check if "Selenium" is in the webpage title
+assert "Selenium" in driver.title
+
 HTML_CODE = """
 <!DOCTYPE html>
 <html>
@@ -45,5 +48,9 @@ with open("../webpages/webpage/index.html", "w") as f:
 website_abspath = os.path.abspath("../webpages/webpage/index.html")
 driver.get("file:///" + website_abspath)
 time.sleep(5)
+
+# Check the webpage title
+assert driver.title == "Webpage"
+
 # Closes all the open windows and terminate the process for the driver
 driver.quit()
