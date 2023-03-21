@@ -1,7 +1,7 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 --------------------------------------------------------------------------
-python -m unittest tests.test__example_8_2_unittest__collection_asserts -v
+python -m unittest tests.test__example_8_2_unittest__collections -v
 --------------------------------------------------------------------------
 or discover and execute all the tests with the command:
 -------------------------------
@@ -11,7 +11,7 @@ python -m unittest discover -v
 import unittest
 
 
-class TestCaseCollectionAsserts(unittest.TestCase):
+class TestCase3(unittest.TestCase):
     def setUp(self):
         self.list1 = ["Python", "Selenium"]
         self.list2 = ["Selenium", "Python"]
@@ -40,13 +40,13 @@ class TestCaseCollectionAsserts(unittest.TestCase):
     def test20(self):
         self.assertNotIn("Selenium", "Selenium Python", "some text if the test fails")
 
-# test15 (tests.test__example_8_2_unittest__collection_asserts.TestCaseCollectionAsserts) ... FAIL
-# test16 (tests.test__example_8_2_unittest__collection_asserts.TestCaseCollectionAsserts) ... FAIL
-# test17 (tests.test__example_8_2_unittest__collection_asserts.TestCaseCollectionAsserts) ... ok
-# test18 (tests.test__example_8_2_unittest__collection_asserts.TestCaseCollectionAsserts) ... ok
-# test19 (tests.test__example_8_2_unittest__collection_asserts.TestCaseCollectionAsserts) ... ok
-# test20 (tests.test__example_8_2_unittest__collection_asserts.TestCaseCollectionAsserts) ... FAIL
+# test15 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
+# test16 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
+# test17 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
+# test18 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
+# test19 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
+# test20 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
 #
 # ======================================================================
-# FAIL: test15 (tests.test__example_8_2_unittest__collection_asserts.TestCaseCollectionAsserts)
+# FAIL: test15 (tests.test__example_8_2_unittest__collections.TestCase3)
 # ...
