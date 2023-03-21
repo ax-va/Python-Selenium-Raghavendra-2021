@@ -1,8 +1,8 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
----------------------------------------------------------------------
+------------------------------------------------------------------------------------
 python -m unittest tests.test__example_8_1_unittest__basic_and_comparison_asserts -v
----------------------------------------------------------------------
+------------------------------------------------------------------------------------
 or discover and execute all the tests with the command:
 -------------------------------
 python -m unittest discover -v
@@ -61,20 +61,20 @@ class TestCaseComparisonAsserts(unittest.TestCase):
     def test14(self):
         self.assertLessEqual("aa", "a", "some text if the test fails")
 
-# test01 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase1) ... FAIL
-# test02 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase1) ... ok
-# test03 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase1) ... FAIL
-# test04 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase1) ... ok
-# test05 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase1) ... ok
-# test06 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase1) ... FAIL
-# test07 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase1) ... ok
-# test08 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase1) ... ok
-# test09 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase2) ... FAIL
-# test10 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase2) ... ok
-# test11 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase2) ... ok
-# test12 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase2) ... ok
-# test13 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase2) ... FAIL
-# test14 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCase2) ... FAIL
+# test01 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts) ... FAIL
+# test02 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts) ... ok
+# test03 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts) ... FAIL
+# test04 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts) ... ok
+# test05 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts) ... ok
+# test06 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts) ... FAIL
+# test07 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts) ... ok
+# test08 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts) ... ok
+# test09 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseComparisonAsserts) ... FAIL
+# test10 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseComparisonAsserts) ... ok
+# test11 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseComparisonAsserts) ... ok
+# test12 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseComparisonAsserts) ... ok
+# test13 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseComparisonAsserts) ... FAIL
+# test14 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseComparisonAsserts) ... FAIL
 #
 # ======================================================================
 # FAIL: test01 (tests.test__example_8_1_unittest__basic_and_comparison_asserts.TestCaseBasicAsserts)
