@@ -35,10 +35,10 @@ class TestCase3(unittest.TestCase):
         self.assertDictEqual(self.dict1, self.dict2, "some text if the test fails")
 
     def test19(self):
-        self.assertIn("Selenium", "Selenium Python", "some text if the test fails")
+        self.assertIn("Py", "Python", "some text if the test fails")
 
     def test20(self):
-        self.assertNotIn("Selenium", "Selenium Python", "some text if the test fails")
+        self.assertNotIn("Py", "Python", "some text if the test fails")
 
 # test15 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
 # test16 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
