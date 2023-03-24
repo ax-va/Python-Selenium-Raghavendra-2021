@@ -9,7 +9,7 @@ class QueryPart(BasePart):
 
     @property
     def query_input_element(self):
-        return InputElement(self._driver, self.QUERY_INPUT_LOCATOR)
+        return InputElement(self.driver, self.QUERY_INPUT_LOCATOR)
 
     def search_for(self, text):
         self.query_input_element.send_keys(text).submit()
