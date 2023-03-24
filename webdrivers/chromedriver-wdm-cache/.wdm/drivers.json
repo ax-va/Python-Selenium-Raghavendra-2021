@@ -4,7 +4,7 @@
         "binary_path": "../webdrivers/chromedriver-wdm-cache\\.wdm\\drivers\\chromedriver\\win32\\109.0.5414\\chromedriver.exe"
     },
     "linux64_chromedriver_110.0.5481_for_110.0.5481": {
-        "timestamp": "10/02/2023",
+        "timestamp": "24/03/2023",
         "binary_path": "../webdrivers/chromedriver-wdm-cache/.wdm/drivers/chromedriver/linux64/110.0.5481/chromedriver"
     }
 }

@@ -33,7 +33,7 @@ else:
     button_reject_all.click()
 
 try:
-    # Try to find non-existent element.
+    # Try to find non-existent element
     non_existent = driver.find_element(By.ID, "Non-existent")
 except NoSuchElementException:
     pass
