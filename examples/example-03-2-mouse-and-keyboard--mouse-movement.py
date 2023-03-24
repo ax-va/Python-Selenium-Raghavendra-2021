@@ -4,7 +4,7 @@ import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions as e_cs
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 # Get the package directory
@@ -28,7 +28,7 @@ menu_categories = driver.find_element(By.LINK_TEXT, "CATEGORIES")
 # Move to element to open the drop-down menu
 actions.move_to_element(menu_categories).perform()
 # Wait 5 seconds for submenu to be displayed
-WebDriverWait(driver, 5).until(e_cs.visibility_of_element_located((By.LINK_TEXT, "Python")))
+WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.LINK_TEXT, "Python")))
 # Find element
 menu_python = driver.find_element(By.LINK_TEXT, "Python")
 time.sleep(5)

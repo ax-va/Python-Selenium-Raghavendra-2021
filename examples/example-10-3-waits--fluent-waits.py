@@ -1,8 +1,10 @@
 import pathlib
 import sys
 
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException, ElementNotVisibleException, NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 # Get the package directory
 package_dir = str(pathlib.Path(__file__).resolve().parents[1])
@@ -15,28 +17,31 @@ import utils.webdrivers as webdrivers
 from webpages.urls import GOOGLE_URL
 
 
-TIMEOUT = 20  # seconds
+TIMEOUT = 10  # seconds
+POLLING_EVERY = 0.1  # second
 
 driver = webdrivers.get_chromedriver()
-# Set implicit wait function for waiting TIMEOUT seconds to find or locate web elements.
-# Waiting is implemented by polling Document Object Model (DOM).
-driver.implicitly_wait(TIMEOUT)
+wait = WebDriverWait(
+    driver=driver,
+    timeout=TIMEOUT,
+    poll_frequency=POLLING_EVERY,
+    ignored_exceptions=[NoSuchElementException, ElementNotVisibleException]  # exceptions ignored during calls
+)
 driver.get(GOOGLE_URL)
 
 try:
     # Find element of button "Reject all"
-    button_reject_all = driver.find_element(By.ID, "W0wltc")
-except NoSuchElementException:
+    button_reject_all = wait.until(EC.presence_of_element_located((By.ID, "W0wltc")))
+except TimeoutException:
     pass
 else:
     # Click button "Reject all"
     button_reject_all.click()
 
 try:
-    # Try to find non-existent element.
-    # Poll TIMEOUT seconds to find element with default polling frequency of 2 Hz (every 0.5 seconds).
-    non_existent = driver.find_element(By.ID, "Non-existent")
-except NoSuchElementException:
+    # Try to find non-existent element
+    non_existent = wait.until(EC.presence_of_element_located((By.ID, "Non-existent")))
+except TimeoutException:
     pass
 
 search_bar = driver.find_element(By.NAME, "q")
