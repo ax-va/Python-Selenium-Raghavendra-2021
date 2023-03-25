@@ -1,11 +1,11 @@
-from google_search_pom.agreement_dialog.agreement_dialog import AgreementDialog
-from google_search_pom.main_page.main_page import MainPage
-from google_search_pom.results_page.results_page import ResultsPage
+from pom_google_search.dialog_agreement.dialog_agreement import DialogAgreement
+from pom_google_search.page_main.page_main import PageMain
+from pom_google_search.page_results.page_results import PageResults
 
-GOOGLE_SEARCH_POM_PAGES = {
-    "AgreementDialog": AgreementDialog,
-    "MainPage": MainPage,
-    "ResultsPage": ResultsPage,
+PAGES_POM_GOOGLE_SEARCH = {
+    "DialogAgreement": DialogAgreement,
+    "PageMain": PageMain,
+    "PageResults": PageResults,
 }
 
 
@@ -19,7 +19,7 @@ class Pages:
         if page is not None:
             return page
         else:
-            page_cls = GOOGLE_SEARCH_POM_PAGES.get(page_cls_name)
+            page_cls = PAGES_POM_GOOGLE_SEARCH.get(page_cls_name)
             if page_cls is None:
                 raise ValueError(f"Page class '{page_cls_name}' missing")
             page = page_cls(self._driver, *args, **kwargs)

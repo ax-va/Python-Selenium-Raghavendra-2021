@@ -7,7 +7,7 @@ POLLING_EVERY = 0.5  # second
 IGNORED_EXCEPTIONS = (NoSuchElementException, )  # ignored exceptions during polling calls
 
 
-class BaseClass:
+class ClassBase:
     def __init__(self, driver,
                  timeout=TIMEOUT,
                  polling_every=POLLING_EVERY,
@@ -62,5 +62,5 @@ class BaseClass:
 
     def wait_for_presence_of_element_located(self, locator):
         self.wait.until(EC.presence_of_element_located(locator))
-        from pom.elements.base_element import BaseElement
-        return BaseElement(self.driver, locator)
+        from pom.elements.element_base import ElementBase
+        return ElementBase(self.driver, locator)

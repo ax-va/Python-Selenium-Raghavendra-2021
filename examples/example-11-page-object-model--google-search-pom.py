@@ -14,23 +14,23 @@ if package_dir not in sys.path:
 # my modules
 import utils.webdrivers as webdrivers
 from webpages.urls import GOOGLE_URL
-from google_search_pom.pages import Pages
+from pom_google_search.pages import Pages
 
 driver = webdrivers.get_chromedriver()
 driver.get(GOOGLE_URL)
 
 pages = Pages(driver)
-AGREEMENT_DIALOG = pages.get("AgreementDialog")
-MAIN_PAGE = pages.get("MainPage")
-RESULTS_PAGE = pages.get("ResultsPage")
+DIALOG_AGREEMENT = pages.get("DialogAgreement")
+PAGE_MAIN = pages.get("PageMain")
+PAGE_RESULTS = pages.get("PageResults")
 
 try:
-    AGREEMENT_DIALOG.click_on_reject_all_button()
+    DIALOG_AGREEMENT.reject_all()
 except NoSuchElementException:
     pass
-MAIN_PAGE.search_for("github ax-va")
-first_item = RESULTS_PAGE.wait_for_presence_of_element_located((By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]"))
-clickable_item = first_item.to_clickable_element()
+PAGE_MAIN.search_for("github ax-va")
+first_item = PAGE_RESULTS.wait_for_presence_of_element_located((By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]"))
+clickable_item = first_item.to_clickable()
 clickable_item.click()
 time.sleep(5)
 

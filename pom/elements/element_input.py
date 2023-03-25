@@ -1,7 +1,7 @@
-from pom.elements.base_element import BaseElement
+from pom.elements.element_base import ElementBase
 
 
-class InputElement(BaseElement):
+class ElementInput(ElementBase):
     def clear(self):
         self.find_yourself().clear()
         return self
