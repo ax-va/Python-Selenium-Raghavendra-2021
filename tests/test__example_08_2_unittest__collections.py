@@ -1,7 +1,7 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 --------------------------------------------------------------------------
-python -m unittest tests.test__example_8_2_unittest__collections -v
+python -m unittest tests.test__example_08_2_unittest__collections -v
 --------------------------------------------------------------------------
 or discover and execute all the tests with the command:
 -------------------------------
@@ -39,6 +39,9 @@ class TestCase3(unittest.TestCase):
 
     def test20(self):
         self.assertNotIn("Py", "Python", "some text if the test fails")
+
+    def tearDown(self):
+        pass
 
 # test15 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
 # test16 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL

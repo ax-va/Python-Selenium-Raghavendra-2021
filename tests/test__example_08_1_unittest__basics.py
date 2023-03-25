@@ -1,7 +1,7 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 ------------------------------------------------------------------------------------
-python -m unittest tests.test__example_8_1_unittest__basics -v
+python -m unittest tests.test__example_08_1_unittest__basics -v
 ------------------------------------------------------------------------------------
 or discover and execute all the tests with the command:
 -------------------------------
@@ -40,9 +40,14 @@ class TestCase1(unittest.TestCase):
 
     def test08(self):
         self.assertNotIsInstance(self.v1, str, "some text if the test fails")
+        
+    def tearDown(self):
+        pass
 
 
 class TestCase2(unittest.TestCase):
+    def setUp(self):
+        pass
     def test09(self):
         self.assertEqual(1, 2, "some text if the test fails")
 
@@ -60,6 +65,9 @@ class TestCase2(unittest.TestCase):
 
     def test14(self):
         self.assertLessEqual("aa", "a", "some text if the test fails")
+
+    def tearDown(self):
+        pass
 
 # test01 (tests.test__example_8_1_unittest__basics.TestCase1) ... FAIL
 # test02 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
