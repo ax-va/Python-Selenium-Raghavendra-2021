@@ -1,6 +1,6 @@
-from google_search_pom.pages.agreement_dialog import AgreementDialog
-from google_search_pom.pages.main_page import MainPage
-from google_search_pom.pages.results_page import ResultsPage
+from google_search_pom.agreement_dialog.agreement_dialog import AgreementDialog
+from google_search_pom.main_page.main_page import MainPage
+from google_search_pom.results_page.results_page import ResultsPage
 
 GOOGLE_SEARCH_POM_PAGES = {
     "AgreementDialog": AgreementDialog,
@@ -9,12 +9,12 @@ GOOGLE_SEARCH_POM_PAGES = {
 }
 
 
-class Controller:
+class Pages:
     def __init__(self, driver):
         self._driver = driver
         self._pages_cache = {}
 
-    def get_page(self, page_cls_name, *args, **kwargs):
+    def get(self, page_cls_name, *args, **kwargs):
         page = self._pages_cache.get(page_cls_name)
         if page is not None:
             return page

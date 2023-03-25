@@ -14,15 +14,15 @@ if package_dir not in sys.path:
 # my modules
 import utils.webdrivers as webdrivers
 from webpages.urls import GOOGLE_URL
-from google_search_pom.controller import Controller
+from google_search_pom.pages import Pages
 
 driver = webdrivers.get_chromedriver()
 driver.get(GOOGLE_URL)
 
-controller = Controller(driver)
-AGREEMENT_DIALOG = controller.get_page("AgreementDialog")
-MAIN_PAGE = controller.get_page("MainPage")
-RESULTS_PAGE = controller.get_page("ResultsPage")
+pages = Pages(driver)
+AGREEMENT_DIALOG = pages.get("AgreementDialog")
+MAIN_PAGE = pages.get("MainPage")
+RESULTS_PAGE = pages.get("ResultsPage")
 
 try:
     AGREEMENT_DIALOG.click_on_reject_all_button()
