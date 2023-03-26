@@ -36,8 +36,8 @@ class TestCaseGoogleSearch(unittest.TestCase):
         cls.DIALOG_AGREEMENT = cls.pages.get("DialogAgreement")
         cls.PAGE_MAIN = cls.pages.get("PageMain")
         cls.PAGE_RESULTS = cls.pages.get("PageResults")
-        locator = (By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
-        cls.results_item = cls.PAGE_RESULTS.create_clickable_element(locator)
+        locator_results_item = (By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
+        cls.results_item = cls.PAGE_RESULTS.create_clickable_element(locator_results_item)
 
     @classmethod
     def tearDownClass(cls):
