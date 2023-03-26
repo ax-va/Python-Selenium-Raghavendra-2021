@@ -19,6 +19,7 @@ def tearDownModule():
     """ Called once, after executing the module """
     pass
 
+
 class TestCase3(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

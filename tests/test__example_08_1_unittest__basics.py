@@ -19,6 +19,7 @@ def tearDownModule():
     """ Called once, after executing the module """
     print("In test__example_08_1_unittest__basics, in tearDownModule")
 
+
 class TestCase1(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

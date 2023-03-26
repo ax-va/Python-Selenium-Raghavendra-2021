@@ -36,6 +36,7 @@ def tearDownModule():
     """ Called once, after executing the module """
     pass
 
+
 class TestCaseGoogleSearch(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
