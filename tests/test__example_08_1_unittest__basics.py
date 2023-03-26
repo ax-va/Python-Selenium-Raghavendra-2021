@@ -11,6 +11,14 @@ python -m unittest discover -v
 import unittest
 
 
+def setUpModule():
+    """ Called once, before executing the module """
+    print("In test__example_08_1_unittest__basics, in setUpModule")
+
+def tearDownModule():
+    """ Called once, after executing the module """
+    print("In test__example_08_1_unittest__basics, in tearDownModule")
+
 class TestCase1(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

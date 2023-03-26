@@ -28,6 +28,14 @@ from webpages.urls import GOOGLE_URL
 from pom_google_search.pages import Pages
 
 
+def setUpModule():
+    """ Called once, before executing the module """
+    pass
+
+def tearDownModule():
+    """ Called once, after executing the module """
+    pass
+
 class TestCaseGoogleSearch(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
