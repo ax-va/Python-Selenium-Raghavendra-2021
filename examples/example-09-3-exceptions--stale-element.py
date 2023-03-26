@@ -32,13 +32,13 @@ search_bar.send_keys("github ax-va")
 time.sleep(5)
 search_bar.submit()
 time.sleep(5)
-first_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
-first_item.click()
+results_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
+results_item.click()
 time.sleep(5)
 
 try:
-    first_item.click()
+    results_item.click()
 except StaleElementReferenceException:
-    print("Web element is stale")
+    print("Web element stale")
 
 driver.quit()

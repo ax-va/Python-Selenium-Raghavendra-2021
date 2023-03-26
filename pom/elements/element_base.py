@@ -19,7 +19,10 @@ class ElementBase(ClassBase):
         return self._locator[1]
 
     def find_yourself(self):
-        return self.find_element(self.locator_by, self.locator_value)
+        return self.find_element(self.locator)
+
+    def is_displayed(self):
+        return self.find_yourself().is_displayed()
 
     def to_input(self):
         from pom.elements.element_input import ElementInput
@@ -28,3 +31,6 @@ class ElementBase(ClassBase):
     def to_clickable(self):
         from pom.elements.element_clickable import ElementClickable
         return ElementClickable(self.driver, self.locator)
+
+    def wait_for_presence_of_this_element_located(self):
+        return ClassBase.wait_for_presence_of_element_located(self, self.locator)

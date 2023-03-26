@@ -41,8 +41,8 @@ except TimeoutException:
 search_bar = driver.find_element(By.NAME, "q")
 search_bar.send_keys("github ax-va")
 search_bar.submit()
-first_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
-first_item.click()
+results_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
+results_item.click()
 
 driver.quit()
 

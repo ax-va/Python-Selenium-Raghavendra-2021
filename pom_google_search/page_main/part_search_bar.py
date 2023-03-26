@@ -11,6 +11,9 @@ class PartSearchBar(PartBase):
     def element_input(self):
         return ElementInput(self.driver, self.LOCATOR_ELEMENT_INPUT)
 
+    def is_displayed(self):
+        return self.element_input.is_displayed()
+
     def search_for(self, text):
         self.element_input.send_keys(text).submit()
         return self

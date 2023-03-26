@@ -44,11 +44,11 @@ search_bar.submit()
 # Wait 5 seconds
 time.sleep(5)
 
-# Get first item
-first_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
+# Get first found item
+results_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
 
-# Click first item
-first_item.click()
+# Click first found item
+results_item.click()
 
 # Wait 5 seconds
 time.sleep(5)

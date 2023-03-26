@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 TIMEOUT = 20  # seconds
-POLLING_EVERY = 0.5  # second
+POLLING_EVERY = 0.1  # second
 IGNORED_EXCEPTIONS = (NoSuchElementException, )  # ignored exceptions during polling calls
 
 
@@ -54,13 +54,11 @@ class ClassBase:
             ignored_exceptions=self._ignored_exceptions
         )
 
-    def find_element(self, locator_by, locator_value):
-        return self.driver.find_element(locator_by, locator_value)
+    def find_element(self, locator):
+        return self.driver.find_element(*locator)
 
-    def find_elements(self, locator_by, locator_value):
-        return self.driver.find_elements(locator_by, locator_value)
+    def find_elements(self, locator):
+        return self.driver.find_elements(*locator)
 
     def wait_for_presence_of_element_located(self, locator):
-        self.wait.until(EC.presence_of_element_located(locator))
-        from pom.elements.element_base import ElementBase
-        return ElementBase(self.driver, locator)
+        return self.wait.until(EC.presence_of_element_located(locator))

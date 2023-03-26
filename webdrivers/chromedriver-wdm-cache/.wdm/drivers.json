@@ -6,5 +6,9 @@
     "linux64_chromedriver_110.0.5481_for_110.0.5481": {
         "timestamp": "24/03/2023",
         "binary_path": "../webdrivers/chromedriver-wdm-cache/.wdm/drivers/chromedriver/linux64/110.0.5481/chromedriver"
+    },
+    "linux64_chromedriver_111.0.5563_for_111.0.5563": {
+        "timestamp": "26/03/2023",
+        "binary_path": "../webdrivers/chromedriver-wdm-cache/.wdm/drivers/chromedriver/linux64/111.0.5563/chromedriver"
     }
 }

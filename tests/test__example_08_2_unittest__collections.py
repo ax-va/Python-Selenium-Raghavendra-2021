@@ -12,15 +12,30 @@ import unittest
 
 
 class TestCase3(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        """ Called once, before all test methods in this class """
+        cls.list1 = ["Python", "Selenium"]
+        cls.list2 = ["Selenium", "Python"]
+        cls.tuple1 = ("Python", "Selenium")
+        cls.tuple2 = ("Selenium", "Python")
+        cls.set1 = {"Python", "Selenium"}
+        cls.set2 = {"Selenium", "Python"}
+        cls.dict1 = {"key1": "value1", "key2": "value2"}
+        cls.dict2 = {"key2": "value2", "key1": "value1"}
+
+    @classmethod
+    def tearDownClass(cls):
+        """ Called once, after all test methods in this class, if setUpClass was successful """
+        pass
+
     def setUp(self):
-        self.list1 = ["Python", "Selenium"]
-        self.list2 = ["Selenium", "Python"]
-        self.tuple1 = ("Python", "Selenium")
-        self.tuple2 = ("Selenium", "Python")
-        self.set1 = {"Python", "Selenium"}
-        self.set2 = {"Selenium", "Python"}
-        self.dict1 = {"key1": "value1", "key2": "value2"}
-        self.dict2 = {"key2": "value2", "key1": "value1"}
+        """ Called multiple times, before every test method in this class """
+        pass
+
+    def tearDown(self):
+        """ Called multiple times, after every test method in this class """
+        pass
 
     def test15(self):
         self.assertListEqual(self.list1, self.list2, "some text if the test fails")
@@ -40,16 +55,11 @@ class TestCase3(unittest.TestCase):
     def test20(self):
         self.assertNotIn("Py", "Python", "some text if the test fails")
 
-    def tearDown(self):
-        pass
-
+# ...
 # test15 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
 # test16 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
 # test17 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
 # test18 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
 # test19 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
 # test20 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
-#
-# ======================================================================
-# FAIL: test15 (tests.test__example_8_2_unittest__collections.TestCase3)
 # ...

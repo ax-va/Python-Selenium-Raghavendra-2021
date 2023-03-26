@@ -12,10 +12,26 @@ import unittest
 
 
 class TestCase1(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        """ Called once, before all test methods in this class """
+        print("In TestCase1, in setUpClass")
+        cls.s1 = "Python"
+        cls.s2 = "Java"
+        cls.v1 = None
+
+    @classmethod
+    def tearDownClass(cls):
+        """ Called once, after all test methods in this class, if setUpClass was successful """
+        print("In TestCase1, in tearDownClass")
+
     def setUp(self):
-        self.s1 = "Python"
-        self.s2 = "Java"
-        self.v1 = None
+        """ Called multiple times, before every test method in this class """
+        print("\nIn TestCase1, in setUp")
+
+    def tearDown(self):
+        """ Called multiple times, after every test method in this class """
+        print("In TestCase1, in tearDown")
 
     def test01(self):
         self.assertTrue(self.s1 == self.s2, f"'{self.s1}' and '{self.s2}' do not match")
@@ -40,14 +56,27 @@ class TestCase1(unittest.TestCase):
 
     def test08(self):
         self.assertNotIsInstance(self.v1, str, "some text if the test fails")
-        
-    def tearDown(self):
-        pass
 
 
 class TestCase2(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
+        """ Called once, before all test methods in this class """
         pass
+
+    @classmethod
+    def tearDownClass(cls):
+        """ Called once, after all test methods in this class, if setUpClass was successful """
+        pass
+
+    def setUp(self):
+        """ Called multiple times, before every test method in this class """
+        pass
+
+    def tearDown(self):
+        """ Called multiple times, after every test method in this class """
+        pass
+
     def test09(self):
         self.assertEqual(1, 2, "some text if the test fails")
 
@@ -66,25 +95,32 @@ class TestCase2(unittest.TestCase):
     def test14(self):
         self.assertLessEqual("aa", "a", "some text if the test fails")
 
-    def tearDown(self):
-        pass
-
+# ...
 # test01 (tests.test__example_8_1_unittest__basics.TestCase1) ... FAIL
+# ...
 # test02 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
+# ...
 # test03 (tests.test__example_8_1_unittest__basics.TestCase1) ... FAIL
+# ...
 # test04 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
+# ...
 # test05 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
+# ...
 # test06 (tests.test__example_8_1_unittest__basics.TestCase1) ... FAIL
+# ...
 # test07 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
+# ...
 # test08 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
+# ...
 # test09 (tests.test__example_8_1_unittest__basics.TestCase2) ... FAIL
+# ...
 # test10 (tests.test__example_8_1_unittest__basics.TestCase2) ... ok
+# ...
 # test11 (tests.test__example_8_1_unittest__basics.TestCase2) ... ok
+# ...
 # test12 (tests.test__example_8_1_unittest__basics.TestCase2) ... ok
+# ...
 # test13 (tests.test__example_8_1_unittest__basics.TestCase2) ... FAIL
+# ...
 # test14 (tests.test__example_8_1_unittest__basics.TestCase2) ... FAIL
-#
-# ======================================================================
-# FAIL: test01 (tests.test__example_8_1_unittest__basics.TestCase1)
-# ----------------------------------------------------------------------
 # ...
