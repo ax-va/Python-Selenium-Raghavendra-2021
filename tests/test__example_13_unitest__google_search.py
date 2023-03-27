@@ -1,7 +1,7 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 --------------------------------------------------------------------------
-python -m unittest tests.test__example_11_2_page_object_model__google_search_pom -v
+python -m unittest tests.test__example_13_unitest__google_search -v
 --------------------------------------------------------------------------
 or discover and execute all the tests with the command:
 -------------------------------
