@@ -79,7 +79,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
         self.assertIn("ax-va", self.driver.title, "Desired Github page not opened")
 
 # ...
-# test1_open_main_google_page (tests.test__example_11_2_page_object_model__google_search_pom.TestCaseGoogleSearch) ... ok
-# test2_search_for_github (tests.test__example_11_2_page_object_model__google_search_pom.TestCaseGoogleSearch) ... ok
-# test3_open_github_page (tests.test__example_11_2_page_object_model__google_search_pom.TestCaseGoogleSearch) ... ok
+# test1_open_main_google_page (tests.test__example_13_unitest__google_search.TestCaseGoogleSearch) ... ok
+# test2_search_for_github (tests.test__example_13_unitest__google_search.TestCaseGoogleSearch) ... ok
+# test3_open_github_page (tests.test__example_13_unitest__google_search.TestCaseGoogleSearch) ... ok
 # ...
