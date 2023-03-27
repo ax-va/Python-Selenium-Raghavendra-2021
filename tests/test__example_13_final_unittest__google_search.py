@@ -29,11 +29,9 @@ from pom_google_search.pages import Pages
 
 
 def setUpModule():
-    """ Called once, before executing the module """
     pass
 
 def tearDownModule():
-    """ Called once, after executing the module """
     pass
 
 
