@@ -47,12 +47,12 @@ class TestCase4(unittest.TestCase):
         """ This test method will be skipped """
         pass
 
-    @unittest.skipIf(condition=True, reason="Conditional skip")  # Condition is set before running setUpClass
+    @unittest.skipIf(condition=True, reason="Conditional skip")  # Conditioned before running setUpClass
     def test24(self):
         """ This test method will be skipped """
         pass
 
-    @unittest.skipUnless(condition=False, reason="Conditional skip")  # Condition is set before running setUpClass
+    @unittest.skipUnless(condition=False, reason="Conditional skip")  # Conditioned before running setUpClass
     def test25(self):
         """ This test method will be skipped """
         pass
