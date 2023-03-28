@@ -13,7 +13,6 @@ import time
 import unittest
 import pathlib
 import sys
-from datetime import datetime
 
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
@@ -39,9 +38,6 @@ def tearDownModule():
 
 
 class TestCaseGoogleSearch(unittest.TestCase):
-    is_test1_open_main_google_page_successful = False
-    is_test2_search_for_github_successful = False
-
     @classmethod
     def setUpClass(cls):
         cls.driver = webdrivers.get_chromedriver()
@@ -51,6 +47,8 @@ class TestCaseGoogleSearch(unittest.TestCase):
         cls.PAGE_RESULTS = cls.pages.get("PageResults")
         locator_results_item = (By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
         cls.results_item = cls.PAGE_RESULTS.create_clickable_element(locator_results_item)
+        cls.is_test1_open_main_google_page_successful = False
+        cls.is_test2_search_for_github_successful = False
 
     @classmethod
     def tearDownClass(cls):
