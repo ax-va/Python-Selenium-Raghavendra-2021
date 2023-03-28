@@ -41,7 +41,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdrivers.get_chromedriver()
-        # Create a POM page creator
+        # Create a POM page controller
         cls.pages = Pages(cls.driver)
         # Get POM pages
         cls.DIALOG_AGREEMENT = cls.pages.get("DialogAgreement")
@@ -71,7 +71,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
             self.DIALOG_AGREEMENT.reject_all()
         except NoSuchElementException:
             pass
-        self.assertTrue(self.PAGE_MAIN.is_opened(), "Main Google page not opened")
+        self.assertTrue(self.PAGE_MAIN.is_ready(), "Main Google page not ready")
         # Set that the test has been successful
         self.__class__.is_test1_open_main_google_page_successful = True
 

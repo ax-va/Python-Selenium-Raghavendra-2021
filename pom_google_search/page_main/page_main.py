@@ -8,7 +8,7 @@ class PageMain(PageBase):
     def part_search_bar(self):
         return PartSearchBar(self.driver)
 
-    def is_opened(self):
+    def is_ready(self):
         return self.part_search_bar.is_displayed()
 
     def search_for(self, text):
