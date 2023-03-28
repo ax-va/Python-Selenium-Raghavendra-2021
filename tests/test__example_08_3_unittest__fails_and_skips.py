@@ -63,14 +63,14 @@ class TestCase4(unittest.TestCase):
         self.assertTrue(False, "False is not True")
 
 # test21 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
-# This method is failed ... FAIL
+# This test method will be failed ... FAIL
 # test22 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
-# This method is skipped ... skipped 'Some reason why skipped'
+# This test method will be skipped ... skipped 'Some reason why skipped'
 # test23 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
-# This method is skipped ... skipped 'Unconditional skip'
+# This test method will be skipped ... skipped 'Unconditional skip'
 # test24 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
-# This method is skipped ... skipped 'Conditional skip'
+# This test method will be skipped ... skipped 'Conditional skip'
 # test25 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
-# This method is skipped ... skipped 'Conditional skip'
+# This test method will be skipped ... skipped 'Conditional skip'
 # test26 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
-# Will not be counted as failed ... expected failure
+# This test method will not be counted as failed ... expected failure
