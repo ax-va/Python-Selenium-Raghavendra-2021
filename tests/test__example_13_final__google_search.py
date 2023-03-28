@@ -102,7 +102,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
 
     def skip_if_main_page_not_ready(self):
         if not self.__class__.is_main_google_page_ready:
-            self.skipTest("Main page not ready")
+            self.skipTest("Main Google page not ready")
 
     def skip_if_search_for_github_not_successful(self):
         if not self.__class__.is_search_for_github_successful:
