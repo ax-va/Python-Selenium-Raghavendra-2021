@@ -35,31 +35,31 @@ class TestCase4(unittest.TestCase):
         pass
 
     def test21(self):
-        """ This method is failed """
+        """ This test method will be failed """
         self.fail()
 
     def test22(self):
-        """ This method is skipped """
+        """ This test method will be skipped """
         self.skipTest("Some reason why skipped")
 
     @unittest.skip(reason="Unconditional skip")
     def test23(self):
-        """ This method is skipped """
+        """ This test method will be skipped """
         pass
 
     @unittest.skipIf(condition=True, reason="Conditional skip")  # Condition is set before running setUpClass
     def test24(self):
-        """ This method is skipped """
+        """ This test method will be skipped """
         pass
 
     @unittest.skipUnless(condition=False, reason="Conditional skip")  # Condition is set before running setUpClass
     def test25(self):
-        """ This method is skipped """
+        """ This test method will be skipped """
         pass
 
     @unittest.expectedFailure
     def test26(self):
-        """ Will not be counted as failed """
+        """ This test method will not be counted as failed """
         self.assertTrue(False, "False is not True")
 
 # test21 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
