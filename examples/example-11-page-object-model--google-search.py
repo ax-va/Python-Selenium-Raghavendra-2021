@@ -2,7 +2,7 @@ import pathlib
 import sys
 import time
 
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 
 # Get the package directory
@@ -30,8 +30,14 @@ try:
 except NoSuchElementException:
     pass
 PAGE_MAIN.search_for("github ax-va")
-# Create a POM clickable element on page PAGE_RESULTS
+# Create POM clickable elements on page PAGE_RESULTS
+non_existent = PAGE_RESULTS.create_clickable_element((By.ID, "Non-existent"))
 results_item = PAGE_RESULTS.create_clickable_element((By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]"))
+# The non-existent item does not exist
+try:
+    non_existent.wait_for_presence_of_this_element_located()
+except TimeoutException:
+    pass
 # Ensure the searched item is visible to click it
 results_item.wait_for_presence_of_this_element_located()
 results_item.click()
