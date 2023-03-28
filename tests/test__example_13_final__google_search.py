@@ -97,7 +97,6 @@ class TestCaseGoogleSearch(unittest.TestCase):
         time.sleep(5)
         self.assertIn("ax-va", self.driver.title, "Desired Github page not opened")
 
-# ...
 # test1_open_main_google_page (tests.test__example_13_unitest__google_search.TestCaseGoogleSearch) ... ok
 # test2_search_for_github (tests.test__example_13_unitest__google_search.TestCaseGoogleSearch) ... ok
 # test3_open_github_page (tests.test__example_13_unitest__google_search.TestCaseGoogleSearch) ... ok
