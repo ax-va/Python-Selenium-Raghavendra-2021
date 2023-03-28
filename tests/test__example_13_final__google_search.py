@@ -1,8 +1,8 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
---------------------------------------------------------------------------
+-----------------------------------------------------------------
 python -m unittest -v tests.test__example_13_final__google_search
---------------------------------------------------------------------------
+-----------------------------------------------------------------
 
 or discover and execute all the found tests with the command:
 ------------------------------
