@@ -47,7 +47,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
         cls.DIALOG_AGREEMENT = cls.pages.get("DialogAgreement")
         cls.PAGE_MAIN = cls.pages.get("PageMain")
         cls.PAGE_RESULTS = cls.pages.get("PageResults")
-        # Create POM clickable elements on page PAGE_RESULTS to click them later
+        # Create POM clickable elements on page PAGE_RESULTS
         locator_for_results_item = (By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
         cls.results_item = cls.PAGE_RESULTS.create_clickable_element(locator_for_results_item)
         locator_for_non_existent = (By.ID, "Non-existent")
