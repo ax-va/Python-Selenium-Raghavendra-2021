@@ -41,12 +41,16 @@ class TestCaseGoogleSearch(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdrivers.get_chromedriver()
+        # Create a POM page creator
         cls.pages = Pages(cls.driver)
+        # Get POM pages
         cls.DIALOG_AGREEMENT = cls.pages.get("DialogAgreement")
         cls.PAGE_MAIN = cls.pages.get("PageMain")
         cls.PAGE_RESULTS = cls.pages.get("PageResults")
+        # Create a POM clickable element on page PAGE_RESULTS to click it later
         locator_results_item = (By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
         cls.results_item = cls.PAGE_RESULTS.create_clickable_element(locator_results_item)
+        # Set parameters to skip tests
         cls.is_test1_open_main_google_page_successful = False
         cls.is_test2_search_for_github_successful = False
 
@@ -61,31 +65,36 @@ class TestCaseGoogleSearch(unittest.TestCase):
         pass
 
     def test1_open_main_google_page(self):
+        # Execute test
         self.driver.get(GOOGLE_URL)
         try:
             self.DIALOG_AGREEMENT.reject_all()
         except NoSuchElementException:
             pass
         self.assertTrue(self.PAGE_MAIN.is_opened(), "Main Google page not opened")
+        # Set that the test has been successful
         self.__class__.is_test1_open_main_google_page_successful = True
 
     def test2_search_for_github(self):
+        # Skip if the previous test has been not successful
         if not self.__class__.is_test1_open_main_google_page_successful:
             self.skipTest("test1_open_main_google_page not successful")
-
+        # Execute test
         self.PAGE_MAIN.search_for("github ax-va")
         try:
             self.results_item.wait_for_presence_of_this_element_located()
         except TimeoutException:
             self.assertTrue(False, "Could not find searched item")
+        # Set that the test has been successful
         self.__class__.is_test2_search_for_github_successful = True
 
     def test3_open_github_page(self):
+        # Skip if the previous tests have been not successful
         if not self.__class__.is_test1_open_main_google_page_successful:
             self.skipTest("test1_open_main_google_page not successful")
         elif not self.__class__.is_test2_search_for_github_successful:
             self.skipTest("test2_search_for_github not successful")
-
+        # Execute test
         self.results_item.click()
         time.sleep(5)
         self.assertIn("ax-va", self.driver.title, "Desired Github page not opened")
