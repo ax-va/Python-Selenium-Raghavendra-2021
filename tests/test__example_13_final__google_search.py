@@ -81,6 +81,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
             self.skipTest("test1_open_main_google_page not successful")
         # Execute test
         self.PAGE_MAIN.search_for("github ax-va")
+        # Ensure the searched item is visible to click it
         try:
             self.results_item.wait_for_presence_of_this_element_located()
         except TimeoutException:

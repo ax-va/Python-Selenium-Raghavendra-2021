@@ -32,7 +32,7 @@ except NoSuchElementException:
 PAGE_MAIN.search_for("github ax-va")
 # Create a POM clickable element on page PAGE_RESULTS
 results_item = PAGE_RESULTS.create_clickable_element((By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]"))
-# Ensure the element is visible to click it
+# Ensure the searched item is visible to click it
 results_item.wait_for_presence_of_this_element_located()
 results_item.click()
 time.sleep(5)
