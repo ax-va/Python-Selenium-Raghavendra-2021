@@ -1,17 +1,19 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 --------------------------------------------------------------------------
-python -m unittest tests.test__example_13_final_unittest__google_search -v
+python -m unittest -v tests.test__example_13_final_unittest__google_search
 --------------------------------------------------------------------------
-or discover and execute all the tests with the command:
--------------------------------
+
+or discover and execute all the found tests with the command:
+------------------------------
 python -m unittest discover -v
--------------------------------
+------------------------------
 """
 import time
 import unittest
 import pathlib
 import sys
+from datetime import datetime
 
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
@@ -31,11 +33,15 @@ from pom_google_search.pages import Pages
 def setUpModule():
     pass
 
+
 def tearDownModule():
     pass
 
 
 class TestCaseGoogleSearch(unittest.TestCase):
+    is_test1_open_main_google_page_successful = False
+    is_test2_search_for_github_successful = False
+
     @classmethod
     def setUpClass(cls):
         cls.driver = webdrivers.get_chromedriver()
@@ -63,15 +69,25 @@ class TestCaseGoogleSearch(unittest.TestCase):
         except NoSuchElementException:
             pass
         self.assertTrue(self.PAGE_MAIN.is_opened(), "Main Google page not opened")
+        self.__class__.is_test1_open_main_google_page_successful = True
 
     def test2_search_for_github(self):
+        if not self.__class__.is_test1_open_main_google_page_successful:
+            self.skipTest("test1_open_main_google_page not successful")
+
         self.PAGE_MAIN.search_for("github ax-va")
         try:
             self.results_item.wait_for_presence_of_this_element_located()
         except TimeoutException:
             self.assertTrue(False, "Could not find searched item")
+        self.__class__.is_test2_search_for_github_successful = True
 
     def test3_open_github_page(self):
+        if not self.__class__.is_test1_open_main_google_page_successful:
+            self.skipTest("test1_open_main_google_page not successful")
+        elif not self.__class__.is_test2_search_for_github_successful:
+            self.skipTest("test2_search_for_github not successful")
+
         self.results_item.click()
         time.sleep(5)
         self.assertIn("ax-va", self.driver.title, "Desired Github page not opened")

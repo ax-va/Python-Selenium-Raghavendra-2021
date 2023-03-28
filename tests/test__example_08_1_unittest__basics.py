@@ -1,26 +1,41 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
-------------------------------------------------------------------------------------
-python -m unittest tests.test__example_08_1_unittest__basics -v
-------------------------------------------------------------------------------------
-or discover and execute all the tests with the command:
--------------------------------
+---------------------------------------------------------------
+python -m unittest -v tests.test__example_08_1_unittest__basics
+---------------------------------------------------------------
+
+or discover and execute all the found tests with the command:
+------------------------------
 python -m unittest discover -v
--------------------------------
+------------------------------
+
+Alternatively, add the following code to run the tests of the module:
+------------------------------
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
+------------------------------
+and run the script as usual:
+---------------------------------------------------
+python tests.test__example_08_1_unittest__basics.py
+---------------------------------------------------
+
+See more information about unit test here:
+https://docs.python.org/3/library/unittest.html
 """
 import unittest
 
 
 def setUpModule():
     """ Called once, before executing the module """
-    print("In test__example_08_1_unittest__basics, in setUpModule")
+    print("In tests.test__example_08_1_unittest__basics, in setUpModule")
 
 def tearDownModule():
     """ Called once, after executing the module """
-    print("In test__example_08_1_unittest__basics, in tearDownModule")
+    print("In tests.test__example_08_1_unittest__basics, in tearDownModule")
 
 
 class TestCase1(unittest.TestCase):
+    """ Short description of test case class """
     @classmethod
     def setUpClass(cls):
         """ Called once, before all test methods in this class """
@@ -43,6 +58,9 @@ class TestCase1(unittest.TestCase):
         print("In TestCase1, in tearDown")
 
     def test01(self):
+        """ Short description of test method """
+        print(f"In {self.id()}")
+        print(f"Description: {self.shortDescription()}")
         self.assertTrue(self.s1 == self.s2, f"'{self.s1}' and '{self.s2}' do not match")
 
     def test02(self):
@@ -104,27 +122,50 @@ class TestCase2(unittest.TestCase):
     def test14(self):
         self.assertLessEqual("aa", "a", "some text if the test fails")
 
-# ...
-# test01 (tests.test__example_8_1_unittest__basics.TestCase1) ... FAIL
-# ...
-# test02 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
-# ...
-# test03 (tests.test__example_8_1_unittest__basics.TestCase1) ... FAIL
-# ...
-# test04 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
-# ...
-# test05 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
-# ...
-# test06 (tests.test__example_8_1_unittest__basics.TestCase1) ... FAIL
-# ...
-# test07 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
-# ...
-# test08 (tests.test__example_8_1_unittest__basics.TestCase1) ... ok
-# ...
-# test09 (tests.test__example_8_1_unittest__basics.TestCase2) ... FAIL
-# test10 (tests.test__example_8_1_unittest__basics.TestCase2) ... ok
-# test11 (tests.test__example_8_1_unittest__basics.TestCase2) ... ok
-# test12 (tests.test__example_8_1_unittest__basics.TestCase2) ... ok
-# test13 (tests.test__example_8_1_unittest__basics.TestCase2) ... FAIL
-# test14 (tests.test__example_8_1_unittest__basics.TestCase2) ... FAIL
+
+# In tests.test__example_08_1_unittest__basics, in setUpModule
+# In TestCase1, in setUpClass
+# test01 (tests.test__example_08_1_unittest__basics.TestCase1)
+# Short description of test method ...
+# In TestCase1, in setUp
+# In tests.test__example_08_1_unittest__basics.TestCase1.test01
+# Description: Short description of test method
+# In TestCase1, in tearDown
+# FAIL
+# test02 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# In TestCase1, in setUp
+# In TestCase1, in tearDown
+# ok
+# test03 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# In TestCase1, in setUp
+# In TestCase1, in tearDown
+# FAIL
+# test04 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# In TestCase1, in setUp
+# In TestCase1, in tearDown
+# ok
+# test05 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# In TestCase1, in setUp
+# In TestCase1, in tearDown
+# ok
+# test06 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# In TestCase1, in setUp
+# In TestCase1, in tearDown
+# FAIL
+# test07 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# In TestCase1, in setUp
+# In TestCase1, in tearDown
+# ok
+# test08 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# In TestCase1, in setUp
+# In TestCase1, in tearDown
+# ok
+# In TestCase1, in tearDownClass
+# test09 (tests.test__example_08_1_unittest__basics.TestCase2) ... FAIL
+# test10 (tests.test__example_08_1_unittest__basics.TestCase2) ... ok
+# test11 (tests.test__example_08_1_unittest__basics.TestCase2) ... ok
+# test12 (tests.test__example_08_1_unittest__basics.TestCase2) ... ok
+# test13 (tests.test__example_08_1_unittest__basics.TestCase2) ... FAIL
+# test14 (tests.test__example_08_1_unittest__basics.TestCase2) ... FAIL
+# In tests.test__example_08_1_unittest__basics, in tearDownModule
 # ...
