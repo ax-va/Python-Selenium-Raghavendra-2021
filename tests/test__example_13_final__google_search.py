@@ -48,8 +48,8 @@ class TestCaseGoogleSearch(unittest.TestCase):
         cls.PAGE_MAIN = cls.pages.get("PageMain")
         cls.PAGE_RESULTS = cls.pages.get("PageResults")
         # Create a POM clickable element on page PAGE_RESULTS to click it later
-        locator_results_item = (By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
-        cls.results_item = cls.PAGE_RESULTS.create_clickable_element(locator_results_item)
+        locator = (By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
+        cls.results_item = cls.PAGE_RESULTS.create_clickable_element(locator)
         # Set parameters to skip tests
         cls.is_test1_open_main_google_page_successful = False
         cls.is_test2_search_for_github_successful = False
