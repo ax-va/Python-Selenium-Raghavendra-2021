@@ -83,7 +83,10 @@ class TestCaseGoogleSearch(unittest.TestCase):
         # Execute test itself
         self.PAGE_MAIN.search_for("github ax-va")
         # Ensure the searched item is visible to click it
-        self.results_item.wait_for_presence_of_this_element_located()
+        try:
+            self.results_item.wait_for_presence_of_this_element_located()
+        except TimeoutException as e:
+            self.fail(f"{e.__class__.__name__}: element not found")
         # Set that the test has been successful
         self.__class__.is_search_for_github_successful = True
 
