@@ -99,9 +99,9 @@ class TestCaseGoogleSearch(unittest.TestCase):
         self.skip_if_main_page_not_ready()
         # Execute test itself
         self.PAGE_MAIN.part_search_bar.element_input.send_keys("github ax-va")
-        self.sm.make_screenshot("request-typed")
+        self.sm.make_screenshot("query-typed")
         self.PAGE_MAIN.part_search_bar.element_input.submit()
-        self.sm.make_screenshot("request-submitted")
+        self.sm.make_screenshot("query-submitted")
         # Ensure the searched item is visible to click it
         try:
             self.results_item.wait_for_presence_of_this_element_located()
