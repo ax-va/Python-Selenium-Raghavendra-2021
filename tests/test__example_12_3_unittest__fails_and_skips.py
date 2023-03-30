@@ -1,7 +1,7 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 ------------------------------------------------------------------------
-python -m unittest -v tests.test__example_08_3_unittest__fails_and_skips
+python -m unittest -v tests.test__example_12_3_unittest__fails_and_skips
 ------------------------------------------------------------------------
 
 or discover and execute all the found tests with the command:
@@ -62,15 +62,16 @@ class TestCase4(unittest.TestCase):
         """ This test method will not be counted as failed """
         self.assertTrue(False, "False is not True")
 
-# test21 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
+# test21 (tests.test__example_12_3_unittest__fails_and_skips.TestCase4)
 # This test method will be failed ... FAIL
-# test22 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
+# test22 (tests.test__example_12_3_unittest__fails_and_skips.TestCase4)
 # This test method will be skipped ... skipped 'Some reason why skipped'
-# test23 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
+# test23 (tests.test__example_12_3_unittest__fails_and_skips.TestCase4)
 # This test method will be skipped ... skipped 'Unconditional skip'
-# test24 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
+# test24 (tests.test__example_12_3_unittest__fails_and_skips.TestCase4)
 # This test method will be skipped ... skipped 'Conditional skip'
-# test25 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
+# test25 (tests.test__example_12_3_unittest__fails_and_skips.TestCase4)
 # This test method will be skipped ... skipped 'Conditional skip'
-# test26 (tests.test__example_08_3_unittest__fails_and_skips.TestCase4)
+# test26 (tests.test__example_12_3_unittest__fails_and_skips.TestCase4)
 # This test method will not be counted as failed ... expected failure
+# ...

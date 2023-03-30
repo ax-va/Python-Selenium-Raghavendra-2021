@@ -1,7 +1,7 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 --------------------------------------------------------------------
-python -m unittest tests.test__example_08_2_unittest__collections -v
+python -m unittest tests.test__example_12_2_unittest__collections -v
 --------------------------------------------------------------------
 
 or discover and execute all the found tests with the command:
@@ -65,10 +65,10 @@ class TestCase3(unittest.TestCase):
     def test20(self):
         self.assertNotIn("Py", "Python", "some text if the test fails")
 
-# test15 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
-# test16 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
-# test17 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
-# test18 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
-# test19 (tests.test__example_8_2_unittest__collections.TestCase3) ... ok
-# test20 (tests.test__example_8_2_unittest__collections.TestCase3) ... FAIL
+# test15 (tests.test__example_12_2_unittest__collections.TestCase3) ... FAIL
+# test16 (tests.test__example_12_2_unittest__collections.TestCase3) ... FAIL
+# test17 (tests.test__example_12_2_unittest__collections.TestCase3) ... ok
+# test18 (tests.test__example_12_2_unittest__collections.TestCase3) ... ok
+# test19 (tests.test__example_12_2_unittest__collections.TestCase3) ... ok
+# test20 (tests.test__example_12_2_unittest__collections.TestCase3) ... FAIL
 # ...

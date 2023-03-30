@@ -1,7 +1,7 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 ------------------------------------------------------------------------
-python -m unittest -v tests.test__example_08_4_unittest__exceptions
+python -m unittest -v tests.test__example_12_4_unittest__exceptions
 ------------------------------------------------------------------------
 
 or discover and execute all the found tests with the command:
@@ -49,8 +49,9 @@ class TestCase5(unittest.TestCase):
         kwargs = {"a": "A", "b": "B"}
         self.assertRaises(ValueError, raise_value_error_exception, *args, **kwargs)
 
-# test27 (tests.test__example_08_4_unittest__exceptions.TestCase5)
+# test27 (tests.test__example_12_4_unittest__exceptions.TestCase5)
 # Check if a method or function throws an exception ... This function will throw ValueError
 # args:  (1, 2, 3)
 # kwargs: {'a': 'A', 'b': 'B'}
 # ok
+# ...

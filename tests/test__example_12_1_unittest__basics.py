@@ -1,7 +1,7 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
 ---------------------------------------------------------------
-python -m unittest -v tests.test__example_08_1_unittest__basics
+python -m unittest -v tests.test__example_12_1_unittest__basics
 ---------------------------------------------------------------
 
 or discover and execute all the found tests with the command:
@@ -16,7 +16,7 @@ if __name__ == "__main__":
 ------------------------------
 and run the script as usual:
 ---------------------------------------------------
-python tests.test__example_08_1_unittest__basics.py
+python tests.test__example_12_1_unittest__basics.py
 ---------------------------------------------------
 
 See more information about unit test here:
@@ -27,11 +27,11 @@ import unittest
 
 def setUpModule():
     """ Called once, before executing the module """
-    print("In tests.test__example_08_1_unittest__basics, in setUpModule")
+    print("In tests.test__example_12_1_unittest__basics, in setUpModule")
 
 def tearDownModule():
     """ Called once, after executing the module """
-    print("In tests.test__example_08_1_unittest__basics, in tearDownModule")
+    print("In tests.test__example_12_1_unittest__basics, in tearDownModule")
 
 
 class TestCase1(unittest.TestCase):
@@ -123,49 +123,49 @@ class TestCase2(unittest.TestCase):
         self.assertLessEqual("aa", "a", "some text if the test fails")
 
 
-# In tests.test__example_08_1_unittest__basics, in setUpModule
+# In tests.test__example_12_1_unittest__basics, in setUpModule
 # In TestCase1, in setUpClass
-# test01 (tests.test__example_08_1_unittest__basics.TestCase1)
+# test01 (tests.test__example_12_1_unittest__basics.TestCase1)
 # Short description of test method ...
 # In TestCase1, in setUp
-# In tests.test__example_08_1_unittest__basics.TestCase1.test01
+# In tests.test__example_12_1_unittest__basics.TestCase1.test01
 # Description: Short description of test method
 # In TestCase1, in tearDown
 # FAIL
-# test02 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# test02 (tests.test__example_12_1_unittest__basics.TestCase1) ...
 # In TestCase1, in setUp
 # In TestCase1, in tearDown
 # ok
-# test03 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# test03 (tests.test__example_12_1_unittest__basics.TestCase1) ...
 # In TestCase1, in setUp
 # In TestCase1, in tearDown
 # FAIL
-# test04 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# test04 (tests.test__example_12_1_unittest__basics.TestCase1) ...
 # In TestCase1, in setUp
 # In TestCase1, in tearDown
 # ok
-# test05 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# test05 (tests.test__example_12_1_unittest__basics.TestCase1) ...
 # In TestCase1, in setUp
 # In TestCase1, in tearDown
 # ok
-# test06 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# test06 (tests.test__example_12_1_unittest__basics.TestCase1) ...
 # In TestCase1, in setUp
 # In TestCase1, in tearDown
 # FAIL
-# test07 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# test07 (tests.test__example_12_1_unittest__basics.TestCase1) ...
 # In TestCase1, in setUp
 # In TestCase1, in tearDown
 # ok
-# test08 (tests.test__example_08_1_unittest__basics.TestCase1) ...
+# test08 (tests.test__example_12_1_unittest__basics.TestCase1) ...
 # In TestCase1, in setUp
 # In TestCase1, in tearDown
 # ok
 # In TestCase1, in tearDownClass
-# test09 (tests.test__example_08_1_unittest__basics.TestCase2) ... FAIL
-# test10 (tests.test__example_08_1_unittest__basics.TestCase2) ... ok
-# test11 (tests.test__example_08_1_unittest__basics.TestCase2) ... ok
-# test12 (tests.test__example_08_1_unittest__basics.TestCase2) ... ok
-# test13 (tests.test__example_08_1_unittest__basics.TestCase2) ... FAIL
-# test14 (tests.test__example_08_1_unittest__basics.TestCase2) ... FAIL
-# In tests.test__example_08_1_unittest__basics, in tearDownModule
+# test09 (tests.test__example_12_1_unittest__basics.TestCase2) ... FAIL
+# test10 (tests.test__example_12_1_unittest__basics.TestCase2) ... ok
+# test11 (tests.test__example_12_1_unittest__basics.TestCase2) ... ok
+# test12 (tests.test__example_12_1_unittest__basics.TestCase2) ... ok
+# test13 (tests.test__example_12_1_unittest__basics.TestCase2) ... FAIL
+# test14 (tests.test__example_12_1_unittest__basics.TestCase2) ... FAIL
+# In tests.test__example_12_1_unittest__basics, in tearDownModule
 # ...
