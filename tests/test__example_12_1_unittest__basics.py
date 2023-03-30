@@ -1,13 +1,15 @@
 """
-Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
----------------------------------------------------------------
+Open directory 'Selenium4-Raghvedra-2021' in terminal and execute one of the following commands:
+----------------------------------------------------------------
 python -m unittest -v tests.test__example_12_1_unittest__basics
----------------------------------------------------------------
+python3 -m unittest -v tests.test__example_12_1_unittest__basics
+----------------------------------------------------------------
 
-or discover and execute all the found tests with the command:
-------------------------------
+or discover and execute all the found tests with the commands:
+-------------------------------
 python -m unittest discover -v
-------------------------------
+python3 -m unittest discover -v
+-------------------------------
 
 Alternatively, add the following code to run the tests of the module:
 ------------------------------
@@ -15,9 +17,10 @@ if __name__ == "__main__":
     unittest.main(verbosity=2)
 ------------------------------
 and run the script as usual:
----------------------------------------------------
+----------------------------------------------------
 python tests.test__example_12_1_unittest__basics.py
----------------------------------------------------
+python3 tests.test__example_12_1_unittest__basics.py
+----------------------------------------------------
 
 See more information about unit test here:
 https://docs.python.org/3/library/unittest.html

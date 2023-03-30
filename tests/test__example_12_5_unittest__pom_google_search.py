@@ -1,13 +1,15 @@
 """
-Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
---------------------------------------------------------------------------
+Open directory 'Selenium4-Raghvedra-2021' in terminal and execute one of the following commands:
+---------------------------------------------------------------------------
 python -m unittest -v tests.test__example_12_5_unittest__pom_google_search
---------------------------------------------------------------------------
+python3 -m unittest -v tests.test__example_12_5_unittest__pom_google_search
+---------------------------------------------------------------------------
 
-or discover and execute all the found tests with the command:
-------------------------------
+or discover and execute all the found tests with the commands:
+-------------------------------
 python -m unittest discover -v
-------------------------------
+python3 -m unittest discover -v
+-------------------------------
 """
 import os
 import pathlib
@@ -48,7 +50,8 @@ class TestCaseGoogleSearch(unittest.TestCase):
         cls.pages = Pages(cls.driver)
         # Create a screenshot maker
         tests_dir = str(pathlib.Path(__file__).resolve().parents[0])
-        cls.sm = ScreenshotMaker(cls.driver, os.path.join(tests_dir, "screenshots"))
+        screenshots_dir = os.path.join(tests_dir, "screenshots")
+        cls.sm = ScreenshotMaker(cls.driver, screenshots_dir)
         # Create a highlighter
         cls.highlighter = Highlighter(cls.driver)
         # Get POM pages

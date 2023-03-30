@@ -1,13 +1,15 @@
 """
-Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
-------------------------------------------------------------------------
+Open directory 'Selenium4-Raghvedra-2021' in terminal and execute one of the following commands:
+--------------------------------------------------------------------
 python -m unittest -v tests.test__example_12_4_unittest__exceptions
-------------------------------------------------------------------------
+python3 -m unittest -v tests.test__example_12_4_unittest__exceptions
+--------------------------------------------------------------------
 
-or discover and execute all the found tests with the command:
-------------------------------
+or discover and execute all the found tests with the commands:
+-------------------------------
 python -m unittest discover -v
-------------------------------
+python3 -m unittest discover -v
+-------------------------------
 """
 import unittest
 
