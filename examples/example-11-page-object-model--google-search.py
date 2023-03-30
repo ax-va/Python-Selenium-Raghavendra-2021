@@ -33,7 +33,7 @@ PAGE_MAIN.search_for("github ax-va")
 # Create POM clickable elements on page PAGE_RESULTS
 non_existent_item = PAGE_RESULTS.create_clickable_element((By.ID, "Non-existent"))
 results_item = PAGE_RESULTS.create_clickable_element((By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]"))
-# The non-existent item does not exist
+# The non-existent item should not exist
 try:
     non_existent_item.wait_for_presence_of_this_element_located()
 except TimeoutException:
