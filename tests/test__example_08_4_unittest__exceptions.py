@@ -13,10 +13,11 @@ import unittest
 
 
 def raise_value_error_exception(*args, **kwargs):
-    print("This function will throw", ValueError.__name__)
+    exception_class = ValueError
+    print("This function will throw", exception_class.__name__)
     print("args: ", args)
     print("kwargs:", kwargs)
-    raise ValueError("some message")
+    raise exception_class("some message")
 
 
 def setUpModule():
