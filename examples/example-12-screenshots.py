@@ -25,7 +25,7 @@ driver.get(GOOGLE_URL)
 
 try:
     button_reject_all = driver.find_element(By.ID, "W0wltc")
-    # Save screenshots in PNG.
+    # Save screenshots to PNG.
     # Two methods are equivalent:
     driver.save_screenshot("../screenshots/s1_dialog_agreement1.png")
     driver.get_screenshot_as_file("../screenshots/s1_dialog_agreement2.png")
@@ -43,11 +43,14 @@ else:
 
 search_bar = driver.find_element(By.NAME, "q")
 search_bar.send_keys("github ax-va")
+# Save screenshot to PNG
 driver.save_screenshot("../screenshots/s2_search_bar_with_text.png")
 search_bar.submit()
+# Save screenshot to PNG
 driver.save_screenshot("../screenshots/s3_found_results.png")
 results_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
 results_item.click()
+# Save screenshot to PNG
 driver.save_screenshot("../screenshots/s4_github_page.png")
 
 driver.quit()
