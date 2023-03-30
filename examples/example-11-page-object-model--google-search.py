@@ -17,7 +17,7 @@ from webpages.urls import GOOGLE_URL
 from pom_google_search.pages import Pages
 
 driver = webdrivers.get_chromedriver()
-# Create a POM page controller
+# Create a Page Object Model (POM) page controller
 pages = Pages(driver)
 # Get POM pages
 DIALOG_AGREEMENT = pages.get("DialogAgreement")
