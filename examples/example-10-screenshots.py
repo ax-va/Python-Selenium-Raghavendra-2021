@@ -2,7 +2,7 @@ import pathlib
 import sys
 
 from io import BytesIO
-from PIL import Image  # Pillow (installed by pip) that is a friendly fork of PIL, Python Imaging Library
+from PIL import Image  # Pillow installed (by pip) that is a friendly fork of PIL, Python Imaging Library
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
