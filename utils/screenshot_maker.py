@@ -8,8 +8,8 @@ class ScreenshotMaker:
         self._counter = count_from
 
     def make_screenshot(self, screenshot_name=""):
-        counter = f"screenshot-{self._counter}"
-        file_name = counter if not screenshot_name else counter + f"-{screenshot_name}"
+        counter_name = f"screenshot-{self._counter}"
+        file_name = counter_name if not screenshot_name else counter_name + f"-{screenshot_name}"
         file = file_name + ".png"
         file_path = os.path.join(self._screenshot_dir, file)
         self._driver.save_screenshot(file_path)
