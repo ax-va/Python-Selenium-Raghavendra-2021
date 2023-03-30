@@ -67,8 +67,10 @@ class Highlighter:
     def _create_style_attrs(self, element):
         style_dict = self._get_style_dict(element)
         # Update values
-        style_dict["background"] = self._get_next_background(element)
-        style_dict["border"] = self._border
+        if self._backgrounds:
+            style_dict["background"] = self._get_next_background(element)
+        if self._border:
+            style_dict["border"] = self._border
         # Get style attributes as string
         style_attrs = ";".join([f"{key}:{value}" for key, value in style_dict.items()]) + ";"
         return style_attrs

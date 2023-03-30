@@ -57,7 +57,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
         # Create a screenshot maker
         cls.sm = ScreenshotMaker(cls.driver, screenshots_dir)
         # Create a highlighter
-        cls.highlighter = Highlighter(cls.driver)
+        cls.highlighter = Highlighter(cls.driver, border="")
         # Get POM pages
         cls.DIALOG_AGREEMENT = cls.pages.get("DialogAgreement")
         cls.PAGE_MAIN = cls.pages.get("PageMain")
