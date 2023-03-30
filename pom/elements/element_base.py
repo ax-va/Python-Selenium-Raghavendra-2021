@@ -18,11 +18,11 @@ class ElementBase(ClassBase):
     def locator_value(self):
         return self._locator[1]
 
-    def find_yourself(self):
+    def find_this_element(self):
         return self.find_element(self.locator)
 
     def is_displayed(self):
-        return self.find_yourself().is_displayed()
+        return self.find_this_element().is_displayed()
 
     def to_input(self):
         from pom.elements.element_input import ElementInput

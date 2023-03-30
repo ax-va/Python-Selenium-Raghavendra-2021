@@ -5,11 +5,11 @@ from pom.parts.part_base import PartBase
 
 
 class PartSearchBar(PartBase):
-    LOCATOR_ELEMENT_INPUT = (By.NAME, "q")
+    LOCATOR_FOR_ELEMENT_INPUT = (By.NAME, "q")
 
     @property
     def element_input(self):
-        return ElementInput(self.driver, self.LOCATOR_ELEMENT_INPUT)
+        return ElementInput(self.driver, self.LOCATOR_FOR_ELEMENT_INPUT)
 
     def is_displayed(self):
         return self.element_input.is_displayed()
