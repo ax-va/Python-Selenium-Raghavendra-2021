@@ -27,15 +27,15 @@ try:
     button_reject_all = driver.find_element(By.ID, "W0wltc")
     # Save screenshots to PNG.
     # Two methods are equivalent:
-    driver.save_screenshot("../screenshots/s1_dialog_agreement1.png")
-    driver.get_screenshot_as_file("../screenshots/s1_dialog_agreement2.png")
+    driver.save_screenshot("../screenshots/s1-dialog_agreement1.png")
+    driver.get_screenshot_as_file("../screenshots/s1-dialog_agreement2.png")
     # Save screenshots in multiple formats
     png_binary_data = driver.get_screenshot_as_png()
     image = Image.open(BytesIO(png_binary_data))
     # Save to PNG
-    image.save("../screenshots/s1_dialog_agreement3.png")
+    image.save("../screenshots/s1-dialog_agreement3.png")
     # Save to JPEG
-    image.convert("RGB").save("../screenshots/s1_dialog_agreement3.jpg")
+    image.convert("RGB").save("../screenshots/s1-dialog_agreement3.jpg")
 except NoSuchElementException:
     pass
 else:
@@ -44,13 +44,13 @@ else:
 search_bar = driver.find_element(By.NAME, "q")
 search_bar.send_keys("github ax-va")
 # Save screenshot to PNG
-driver.save_screenshot("../screenshots/s2_search_bar_with_text.png")
+driver.save_screenshot("../screenshots/s2-search_bar-with-request.png")
 search_bar.submit()
 # Save screenshot to PNG
-driver.save_screenshot("../screenshots/s3_found_results.png")
+driver.save_screenshot("../screenshots/s3-found-results.png")
 results_item = driver.find_element(By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
 results_item.click()
 # Save screenshot to PNG
-driver.save_screenshot("../screenshots/s4_github_page.png")
+driver.save_screenshot("../screenshots/s4-github-page.png")
 
 driver.quit()
