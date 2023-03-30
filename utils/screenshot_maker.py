@@ -12,6 +12,6 @@ class ScreenshotMaker:
         file_name = counter if not screenshot_name else counter + f"-{screenshot_name}"
         file = file_name + ".png"
         file_path = os.path.join(self._screenshot_dir, file)
-        self._driver .save_screenshot(file_path)
+        self._driver.save_screenshot(file_path)
         self._counter += 1
 
