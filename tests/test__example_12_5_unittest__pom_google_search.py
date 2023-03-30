@@ -99,10 +99,11 @@ class TestCaseGoogleSearch(unittest.TestCase):
         # Ensure the searched item is visible to click it
         try:
             self.results_item.wait_for_presence_of_this_element_located()
-            self.highlighter.highlight(self.results_item.find_this_element())
-            self.sm.make_screenshot("found-item-highlighted")
         except TimeoutException as e:
             self.fail(f"{e.__class__.__name__}: element not found")
+        else:
+            self.highlighter.highlight(self.results_item.find_this_element())
+            self.sm.make_screenshot("found-item-highlighted")
         # Set that the test has been successful
         self.__class__.is_search_for_github_successful = True
 
