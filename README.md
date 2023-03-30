@@ -1,6 +1,6 @@
 # Selenium4-Raghavendra-2021
 
-Examples demonstrate the use of Selenium and Python and are based on book "Python Testing with Selenium: Learn to Implement Different Testing Techniques Using the Selenium Webdriver" by Suyaj Raghavendra published by Apress in 2021.
+The use of Selenium and Python are demonstrated and based on book "Python Testing with Selenium: Learn to Implement Different Testing Techniques Using the Selenium Webdriver" by Suyaj Raghavendra published by Apress in 2021.
 
 The examples have been modified, including for working with Selenium 4. They end with an introduction to unittest and writing a Google search unittest.
 
