@@ -7,7 +7,7 @@ class Screenshoter:
         self._driver = driver
         self._screenshots_dir = screenshots_dir
         self._prefix= prefix
-        self._counter = 1
+        self._counter = 0
 
     @property
     def total(self):
