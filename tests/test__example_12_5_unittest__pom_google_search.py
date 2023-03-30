@@ -9,6 +9,7 @@ or discover and execute all the found tests with the command:
 python -m unittest discover -v
 ------------------------------
 """
+import os
 import time
 import unittest
 import pathlib
@@ -16,6 +17,9 @@ import sys
 
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
+
+from utils.highlighter import Highlighter
+from utils.screenshot_maker import ScreenshotMaker
 
 # Get the package directory
 package_dir = str(pathlib.Path(__file__).resolve().parents[1])
@@ -43,6 +47,11 @@ class TestCaseGoogleSearch(unittest.TestCase):
         cls.driver = webdrivers.get_chromedriver()
         # Create a POM page controller
         cls.pages = Pages(cls.driver)
+        # Create a screenshot maker
+        tests_dir = str(pathlib.Path(__file__).resolve().parents[0])
+        cls.sm = ScreenshotMaker(cls.driver, os.path.join(tests_dir, "screenshots"))
+        # Create a highlighter
+        cls.highlighter = Highlighter(cls.driver)
         # Get POM pages
         cls.DIALOG_AGREEMENT = cls.pages.get("DialogAgreement")
         cls.PAGE_MAIN = cls.pages.get("PageMain")
@@ -69,8 +78,10 @@ class TestCaseGoogleSearch(unittest.TestCase):
     def test1_open_main_google_page(self):
         # Execute test itself
         self.driver.get(GOOGLE_URL)
+        self.sm.make_screenshot("Google-URL-opened")
         try:
             self.DIALOG_AGREEMENT.reject_all()
+            self.sm.make_screenshot("all-rejected-on-dialog-agreement")
         except NoSuchElementException:
             pass
         self.assertTrue(self.PAGE_MAIN.is_ready(), "Main Google page not ready")
@@ -81,10 +92,15 @@ class TestCaseGoogleSearch(unittest.TestCase):
         # Skip if preconditions are not satisfied
         self.skip_if_main_page_not_ready()
         # Execute test itself
-        self.PAGE_MAIN.search_for("github ax-va")
+        self.PAGE_MAIN.part_search_bar.element_input.send_keys("github ax-va")
+        self.sm.make_screenshot("request-typed")
+        self.PAGE_MAIN.part_search_bar.element_input.submit()
+        self.sm.make_screenshot("request-submitted")
         # Ensure the searched item is visible to click it
         try:
             self.results_item.wait_for_presence_of_this_element_located()
+            self.highlighter.highlight(self.results_item.find_this_element())
+            self.sm.make_screenshot("found-item-highlighted")
         except TimeoutException as e:
             self.fail(f"{e.__class__.__name__}: element not found")
         # Set that the test has been successful
@@ -100,6 +116,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
         self.skip_if_search_for_github_not_successful()
         # Execute test itself
         self.results_item.click()
+        self.sm.make_screenshot("found-item-clicked")
         time.sleep(5)
         self.assertIn("ax-va", self.driver.title, "Desired Github page not opened")
 
