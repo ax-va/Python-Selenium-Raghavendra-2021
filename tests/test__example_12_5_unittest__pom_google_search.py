@@ -10,10 +10,10 @@ python -m unittest discover -v
 ------------------------------
 """
 import os
-import time
-import unittest
 import pathlib
 import sys
+import unittest
+import time
 
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
@@ -26,10 +26,10 @@ if package_dir not in sys.path:
 
 # my modules
 import utils.webdrivers as webdrivers
-from webpages.urls import GOOGLE_URL
 from pom_google_search.pages import Pages
 from utils.highlighter import Highlighter
 from utils.screenshot_maker import ScreenshotMaker
+from webpages.urls import GOOGLE_URL
 
 
 def setUpModule():
