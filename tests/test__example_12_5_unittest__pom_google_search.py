@@ -18,9 +18,6 @@ import sys
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 
-from utils.highlighter import Highlighter
-from utils.screenshot_maker import ScreenshotMaker
-
 # Get the package directory
 package_dir = str(pathlib.Path(__file__).resolve().parents[1])
 # Add the package directory into sys.path if necessary
@@ -31,6 +28,8 @@ if package_dir not in sys.path:
 import utils.webdrivers as webdrivers
 from webpages.urls import GOOGLE_URL
 from pom_google_search.pages import Pages
+from utils.highlighter import Highlighter
+from utils.screenshot_maker import ScreenshotMaker
 
 
 def setUpModule():
