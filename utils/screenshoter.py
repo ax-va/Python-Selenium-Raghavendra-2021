@@ -10,7 +10,7 @@ class Screenshoter:
         self._counter = 1
 
     @property
-    def counted(self):
+    def total(self):
         return self._counter
 
     def take_screenshot(self, description=""):
