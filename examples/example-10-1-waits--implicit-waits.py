@@ -34,7 +34,7 @@ else:
 
 try:
     # Try to find non-existent element
-    non_existent = driver.find_element(By.ID, "Non-existent")
+    non_existent_item = driver.find_element(By.ID, "Non-existent")
 except NoSuchElementException:
     pass
 

@@ -50,8 +50,8 @@ class TestCaseGoogleSearch(unittest.TestCase):
         # Create POM clickable elements on page PAGE_RESULTS
         locator_for_results_item = (By.XPATH, "(//a//*[contains(text(), 'ax-va')])[1]")
         cls.results_item = cls.PAGE_RESULTS.create_clickable_element(locator_for_results_item)
-        locator_for_non_existent = (By.ID, "Non-existent")
-        cls.non_existent = cls.PAGE_RESULTS.create_clickable_element(locator_for_non_existent)
+        locator_for_non_existent_item = (By.ID, "Non-existent")
+        cls.non_existent_item = cls.PAGE_RESULTS.create_clickable_element(locator_for_non_existent_item)
         # Set parameters to skip tests
         cls.is_main_google_page_ready = False
         cls.is_search_for_github_successful = False
@@ -92,7 +92,7 @@ class TestCaseGoogleSearch(unittest.TestCase):
 
     def test3_check_for_non_existent_item(self):
         # Ensure the non-existent item does not exist
-        self.assertRaises(TimeoutException, self.non_existent.wait_for_presence_of_this_element_located)
+        self.assertRaises(TimeoutException, self.non_existent_item.wait_for_presence_of_this_element_located)
 
     def test4_open_github_page(self):
         # Skip if preconditions are not satisfied

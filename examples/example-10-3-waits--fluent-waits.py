@@ -40,7 +40,7 @@ else:
 
 try:
     # Try to find non-existent element
-    non_existent = wait.until(EC.presence_of_element_located((By.ID, "Non-existent")))
+    non_existent_item = wait.until(EC.presence_of_element_located((By.ID, "Non-existent")))
 except TimeoutException:
     pass
 

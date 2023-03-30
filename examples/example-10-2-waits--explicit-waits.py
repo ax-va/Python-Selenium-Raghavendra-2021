@@ -34,7 +34,7 @@ else:
 try:
     # Try to find non-existent element.
     # Poll TIMEOUT seconds to find element with default polling every 0.5 second.
-    non_existent = WebDriverWait(driver, TIMEOUT).until(EC.presence_of_element_located((By.ID, "Non-existent")))
+    non_existent_item = WebDriverWait(driver, TIMEOUT).until(EC.presence_of_element_located((By.ID, "Non-existent")))
 except TimeoutException:
     pass
 
