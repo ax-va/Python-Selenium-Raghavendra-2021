@@ -1,8 +1,8 @@
 """
 Open directory 'Selenium4-Raghvedra-2021' in terminal and execute the following command:
------------------------------------------------------------------
-python -m unittest -v tests.test__example_13_final__google_search
------------------------------------------------------------------
+--------------------------------------------------------------------------
+python -m unittest -v tests.test__example_12_5_unittest__pom_google_search
+--------------------------------------------------------------------------
 
 or discover and execute all the found tests with the command:
 ------------------------------
@@ -112,8 +112,8 @@ class TestCaseGoogleSearch(unittest.TestCase):
             self.skipTest("Search for Github not successful")
 
 
-# test1_open_main_google_page (tests.test__example_13_final__google_search.TestCaseGoogleSearch) ... ok
-# test2_search_for_github (tests.test__example_13_final__google_search.TestCaseGoogleSearch) ... ok
-# test3_check_for_non_existent_item (tests.test__example_13_final__google_search.TestCaseGoogleSearch) ... ok
-# test4_open_github_page (tests.test__example_13_final__google_search.TestCaseGoogleSearch) ... ok
+# test1_open_main_google_page (tests.test__example_12_5_unittest__pom_google_search.TestCaseGoogleSearch) ... ok
+# test2_search_for_github (tests.test__example_12_5_unittest__pom_google_search.TestCaseGoogleSearch) ... ok
+# test3_check_for_non_existent_item (tests.test__example_12_5_unittest__pom_google_search.TestCaseGoogleSearch) ... ok
+# test4_open_github_page (tests.test__example_12_5_unittest__pom_google_search.TestCaseGoogleSearch) ... ok
 # ...
