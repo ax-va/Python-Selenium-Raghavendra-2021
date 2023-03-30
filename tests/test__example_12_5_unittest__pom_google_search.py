@@ -17,6 +17,7 @@ import sys
 import unittest
 import time
 
+from datetime import datetime
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 
@@ -48,9 +49,12 @@ class TestCaseGoogleSearch(unittest.TestCase):
         cls.driver = webdrivers.get_chromedriver()
         # Create a POM page controller
         cls.pages = Pages(cls.driver)
-        # Create a screenshot maker
+        # Create a screenshots' directory
         tests_dir = str(pathlib.Path(__file__).resolve().parents[0])
-        screenshots_dir = os.path.join(tests_dir, "screenshots")
+        timestamp = datetime.now().strftime("date-%y-%m-%d-time-%H-%M-%S-%f")
+        screenshots_dir = os.path.join(tests_dir, "screenshots-" + timestamp)
+        os.mkdir(screenshots_dir)
+        # Create a screenshot maker
         cls.sm = ScreenshotMaker(cls.driver, screenshots_dir)
         # Create a highlighter
         cls.highlighter = Highlighter(cls.driver)
