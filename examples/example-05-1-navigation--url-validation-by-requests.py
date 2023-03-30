@@ -66,12 +66,14 @@ for index, image in enumerate(images[:15]):
 # 13 	Status code of requesting https://wikimedia.org/api/rest_v1/media/math/render/svg/b79333175c8b3f0840bfb4ec41b8072c83ea88d3 received: 200
 # 14 	Status code of requesting https://wikimedia.org/api/rest_v1/media/math/render/svg/20787b696b880d088ce7ae95428712d9cd9386fc received: 200
 
-# HTTP Code     Description
-# 200           Valid Link
-# 302           URL Redirection
-# 400           Bad Request
-# 401           Unauthorized
-# 404           Link/Page not Found
-# 500           Internal Error
+"""
+HTTP Code     Description
+200           Valid Link
+302           URL Redirection
+400           Bad Request
+401           Unauthorized
+404           Link/Page not Found
+500           Internal Error
+"""
 
 driver.quit()

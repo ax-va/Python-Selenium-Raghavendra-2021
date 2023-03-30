@@ -44,3 +44,12 @@ results_item.click()
 time.sleep(5)
 
 driver.quit()
+
+"""
+Advantages of Page Objects Model:
+- Reduces code duplication
+- Enhances code maintenance
+- Shorter test cases
+- Increases code reusability
+- Readability
+"""
