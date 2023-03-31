@@ -1,6 +1,6 @@
 # Selenium4-Raghavendra-2021
 
-The use of Selenium and Python is demonstrated based on Sujay Raghavendra's book "Python Testing with Selenium: Learn to Implement Different Testing Techniques Using the Selenium WebDriver" published by Apress in 2021. The book examples have been modified and updated, including for changes in Selenium 4. They end with an introduction to unittest and writing a Google search test using Page Object Model.
+The use of Selenium and Python is demonstrated based on Sujay Raghavendra's book "Python Testing with Selenium: Learn to Implement Different Testing Techniques Using the Selenium WebDriver" published by Apress in 2021. The book examples have been modified and updated for Selenium 4. They end with an introduction to unittest and writing a Google search test using Page Object Model.
 
 You can see the examples in the 'examples' directory and the tests in the 'tests' one. In the 'utils' folder, the Highlighter class is written for highlighting HTML elements by changing the element style in browser. In the same folder, the Screenshoter class encapsulates taking screenshots to make this task easier. Additionally, in the 'pom' folder, Page Object Model is represented in a very simple form. Then that model is inherited to describe the Google search action in browser.
 
