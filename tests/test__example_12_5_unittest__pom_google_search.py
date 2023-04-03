@@ -47,8 +47,6 @@ class TestCaseGoogleSearch(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdrivers.get_chromedriver()
-        # Create a POM page controller
-        cls.pages = Pages(cls.driver)
         # Create a screenshots' directory
         tests_dir = str(pathlib.Path(__file__).resolve().parents[0])
         timestamp = datetime.now().strftime("date-%y-%m-%d-time-%H-%M-%S-%f")
@@ -58,6 +56,8 @@ class TestCaseGoogleSearch(unittest.TestCase):
         cls.screenshoter = Screenshoter(cls.driver, screenshots_dir)
         # Create a highlighter
         cls.highlighter = Highlighter(cls.driver, border="")
+        # Create a POM page controller
+        cls.pages = Pages(cls.driver)
         # Get POM pages
         cls.DIALOG_AGREEMENT = cls.pages.get("DialogAgreement")
         cls.PAGE_MAIN = cls.pages.get("PageMain")
