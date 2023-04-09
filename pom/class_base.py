@@ -48,10 +48,10 @@ class ClassBase:
     @property
     def wait(self):
         return WebDriverWait(
-            driver=self._driver,
-            timeout=self._timeout,
-            poll_frequency=self._polling_every,
-            ignored_exceptions=self._ignored_exceptions
+            driver=self.driver,
+            timeout=self.timeout,
+            poll_frequency=self.polling_every,
+            ignored_exceptions=self.ignored_exceptions
         )
 
     def find_element(self, locator):
