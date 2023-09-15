@@ -112,7 +112,7 @@ highlighter.highlight_and_wait(element)
 # To find with prefix
 element = driver.find_element(By.CSS_SELECTOR, "p[id^='123']")
 highlighter.highlight_and_wait(element)
-# To find with suffix
+# To find with postfix / suffix
 element = driver.find_element(By.CSS_SELECTOR, "p[id$='123']")
 highlighter.highlight_and_wait(element)
 # To find with substring
