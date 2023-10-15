@@ -44,7 +44,7 @@ HTML_CODE_1 = """
 with open("../webpages/employee-form/index.html", "w") as f:
     f.write(HTML_CODE_1)
 
-driver = webdrivers.get_geckodriver()
+driver = webdrivers.get_chromedriver()
 highlighter = Highlighter(driver)
 website_abspath = os.path.abspath("../webpages/employee-form/index.html")
 driver.get("file:///" + website_abspath)
