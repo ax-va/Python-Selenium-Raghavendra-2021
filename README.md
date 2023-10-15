@@ -1,6 +1,6 @@
 # Python-Selenium-Raghavendra-2021
 
-**Warning: starting with 115 the ChromeDriver release process is integrated with that of Chrome:** https://chromedriver.chromium.org/downloads/version-selection
+**Starting with 115 the ChromeDriver release process is integrated with that of Chrome:** https://chromedriver.chromium.org/downloads/version-selection
 
 Python Selenium is demonstrated by examples and tests based on Sujay Raghavendra's book "Python Testing with Selenium: Learn to Implement Different Testing Techniques Using the Selenium WebDriver" published by Apress in 2021. The book examples have been modified and also updated to Selenium 4. They end with an introduction to unittest and writing a Google search test using Page Object Model / Page Object Pattern.
 
