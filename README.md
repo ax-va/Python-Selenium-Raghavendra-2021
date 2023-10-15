@@ -2,7 +2,7 @@
 
 **Warning: starting with M115 the ChromeDriver release process is integrated with that of Chrome:** https://chromedriver.chromium.org/downloads/version-selection
 
-**As a result, the latest webdriver-manager package (currently 4.0.1) will not work in the examples' code for the browsers using ChromeDriver 115 and above. Search for a solution here:** https://github.com/SergeyPirogov/webdriver_manager
+**As a result, the latest webdriver-manager package (currently 4.0.1) will not work in the examples' code with the browsers using ChromeDriver 115 and above. Search for a solution here:** https://github.com/SergeyPirogov/webdriver_manager
 
 Python Selenium is demonstrated by examples and tests based on Sujay Raghavendra's book "Python Testing with Selenium: Learn to Implement Different Testing Techniques Using the Selenium WebDriver" published by Apress in 2021. The book examples have been modified and also updated to Selenium 4. They end with an introduction to unittest and writing a Google search test using Page Object Model / Page Object Pattern.
 
