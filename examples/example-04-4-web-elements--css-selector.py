@@ -17,31 +17,34 @@ from utils.highlighter import Highlighter
 
 HTML_CODE_1 = """
 <!DOCTYPE html>
-<html>
-    <body>
-        <form id="EmployeeForm">
-            <input name="fname" type="text" value="First Name"/>
-            <br/>
-            <input name="lname" type="text" value="Last Name"/>
-            <br/>
-            <input name="email" type="email" value="Email"/>
-            <br/>
-            <input name="password" type="password" value="Password"/>
-            <br/>
-            <input name="location" type="text" value="Location"/>
-            <br/>
-            <input name="next" type="submit" value="Login"/>
-            <input name="next" type="button" value="Clear"/>
-            <button type="button">Submit</button>
-        </form>
-    </body>
-</html>
+<meta charset="utf-8">
+<style>
+    input { background: yellow; }
+    button { background: yellow; }
+</style>
+<body>
+    <form id="EmployeeForm">
+        <input name="fname" type="text" value="First Name"/>
+        <br/>
+        <input name="lname" type="text" value="Last Name"/>
+        <br/>
+        <input name="email" type="email" value="Email"/>
+        <br/>
+        <input name="password" type="password" value="Password"/>
+        <br/>
+        <input name="location" type="text" value="Location"/>
+        <br/>
+        <input name="next" type="submit" value="Login"/>
+        <input name="next" type="button" value="Clear"/>
+        <button type="button">Submit</button>
+    </form>
+</body>
 """
 
 with open("../webpages/employee-form/index.html", "w") as f:
     f.write(HTML_CODE_1)
 
-driver = webdrivers.get_chromedriver()
+driver = webdrivers.get_geckodriver()
 highlighter = Highlighter(driver)
 website_abspath = os.path.abspath("../webpages/employee-form/index.html")
 driver.get("file:///" + website_abspath)
