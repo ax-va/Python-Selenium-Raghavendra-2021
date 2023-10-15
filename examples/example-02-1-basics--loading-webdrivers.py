@@ -15,11 +15,11 @@ CHROMEDRIVER_LOCATION = None
 if sys.platform == "win32":
     FIREFOX_BIN_LOCATION = "C:/Program Files/Mozilla Firefox/firefox.exe"
     GECKODRIVER_LOCATION = "../webdrivers/geckodriver-win32-0_32_0/geckodriver.exe"
-    CHROMEDRIVER_LOCATION = "../webdrivers/chromedriver-win32-109_0_5414_74/chromedriver.exe"
+    CHROMEDRIVER_LOCATION = "../webdrivers/chromedriver-win32-118_0_5993_70chromedriver.exe"
 elif sys.platform == "linux":
     FIREFOX_BIN_LOCATION = "/snap/firefox/current/usr/lib/firefox/firefox"
     GECKODRIVER_LOCATION = "/snap/firefox/current/usr/lib/firefox/geckodriver"
-    CHROMEDRIVER_LOCATION = "../webdrivers/chromedriver-linux64-110_0_5481/chromedriver"
+    CHROMEDRIVER_LOCATION = "../webdrivers/chromedriver-linux64-118_0_5993_70/chromedriver"
 else:
     raise NotImplementedError("location missing")
 

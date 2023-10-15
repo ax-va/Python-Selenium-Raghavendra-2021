@@ -12,7 +12,8 @@ LOCATIONS = \
                     },
                 "chrome":
                     {
-                        "webdriver": "../webdrivers/chromedriver-win32-109_0_5414_74/chromedriver.exe",
+                        # "webdriver": "../webdrivers/chromedriver-win32-109_0_5414_74/chromedriver.exe",
+                        "webdriver": "../webdrivers/chromedriver-win32-118_0_5993_70/chromedriver",
                     },
             },
         "linux64":

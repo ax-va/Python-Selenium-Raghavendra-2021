@@ -10,10 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 # Open web Chrome browser using webdriver
 driver = webdriver.Chrome(
     service=ChromeService(
-        ChromeDriverManager(
-            path="../webdrivers/chromedriver-wdm-cache",
-            cache_valid_range=30  # days
-        ).install()
+        ChromeDriverManager().install()
     )
 )
 
