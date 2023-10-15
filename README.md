@@ -8,7 +8,7 @@ The webdrivers containing in the project may be out of date, in which case you n
 
 Verified with Python 3.8+ and the following package versions: selenium 4.8.2, webdriver-manager 4.0.1, PyAutoGUI 0.9.53, Pillow 9.4.0.
 
-**The release process for ChromeDriver 115 and above is integrated with that of Chrome:** https://chromedriver.chromium.org/downloads/version-selection
+**The release process of ChromeDriver 115 and above is integrated with that of Chrome:** https://chromedriver.chromium.org/downloads/version-selection
 
 ## How to get a chromedriver
 https://www.browserstack.com/guide/run-selenium-tests-using-selenium-chromedriver
