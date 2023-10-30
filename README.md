@@ -22,6 +22,6 @@ https://www.selenium.dev/documentation/
 
 https://docs.python.org/3/library/unittest.html
 
-## Comparision of CSS selectors and Xpaths
+## Xpath
 
 https://devhints.io/xpath
