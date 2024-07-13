@@ -25,16 +25,16 @@ HTML_CODE = """
     <body>
         <h3>Browsers:</h3>
         <form>
-            <input type="checkbox" id="firefox" name="browser" value="b1" checked/>
+            <input type="checkbox" id="firefox" name="browser" value="b1" checked>
             <label for="firefox">Firefox</label>
             <br/>
-            <input type="checkbox" id="chrome" name="browser" value="b2"/>
+            <input type="checkbox" id="chrome" name="browser" value="b2">
             <label for="chrome">Chrome</label>
             <br/>
-            <input type="checkbox" id="opera" name="browser" value="b3"/>
+            <input type="checkbox" id="opera" name="browser" value="b3">
             <label for="opera">Opera</label>
             <br/>
-            <input type="checkbox" id="edge" name="browser" value="b4"/>
+            <input type="checkbox" id="edge" name="browser" value="b4">
             <label for="edge">Edge</label>
             <br/>
         </form>

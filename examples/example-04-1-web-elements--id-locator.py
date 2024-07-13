@@ -21,18 +21,18 @@ HTML_CODE = """
 <html>
     <body>
         <form id="EmployeeForm">
-            <input name="fname" type="text" value="First Name"/>
+            <input name="fname" type="text" value="First Name">
             <br/>
-            <input name="lname" type="text" value="Last Name"/>
+            <input name="lname" type="text" value="Last Name">
             <br/>
-            <input name="email" type="email" value="Email"/>
+            <input name="email" type="email" value="Email">
             <br/>
-            <input name="password" type="password" value="Password"/>
+            <input name="password" type="password" value="Password">
             <br/>
-            <input name="location" type="text" value="Location"/>
+            <input name="location" type="text" value="Location">
             <br/>
-            <input name="next" type="submit" value="Login"/>
-            <input name="next" type="button" value="Clear"/>
+            <input name="next" type="submit" value="Login">
+            <input name="next" type="button" value="Clear">
             <button type="button">Submit</button>
         </form>
     </body>
