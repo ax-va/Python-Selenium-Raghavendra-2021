@@ -10,18 +10,4 @@ Verified with Python 3.8 and the following package versions: selenium 4.8.2, web
 
 **The release process of ChromeDriver 115 and above is integrated with that of Chrome:** https://chromedriver.chromium.org/downloads/version-selection
 
-## How to get a chromedriver
 
-https://www.browserstack.com/guide/run-selenium-tests-using-selenium-chromedriver
-
-## Selenium Documentation 
-
-https://www.selenium.dev/documentation/
-
-## Unittest Documentation
-
-https://docs.python.org/3/library/unittest.html
-
-## Xpath
-
-https://devhints.io/xpath
