@@ -6,6 +6,14 @@ You can see the examples in the 'examples' directory and the tests themselves in
 
 The webdrivers containing in the project may be out of date, in which case you need to update them or download them in a different way than suggested here. It's worth noting that the paths of Firefox binaries are hardcoded and may differ from the paths on your system. You can check that in `LOCATIONS` in 'utils/locations.py'.
 
-Verified with Python 3.8 and the following package versions: selenium 4.8.2, webdriver-manager 4.0.1, PyAutoGUI 0.9.53, Pillow 9.4.0.
+Verified with Python 3.8 and the following package versions: 
+```
+selenium==4.8.2
+webdriver-manager==4.0.1
+PyAutoGUI==0.9.53
+Pillow==9.4.0
+```
 
-**The release process of ChromeDriver 115 and above is integrated with that of Chrome:** https://chromedriver.chromium.org/downloads/version-selection
+**The release process of ChromeDriver 115 and above is integrated with that of Chrome:** 
+
+https://chromedriver.chromium.org/downloads/version-selection
