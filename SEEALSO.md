@@ -14,7 +14,7 @@ https://docs.python.org/3/library/unittest.html
 
 https://devhints.io/xpath
 
-## Spliter
+## Splinter
 
 https://pypi.org/project/splinter/
 
