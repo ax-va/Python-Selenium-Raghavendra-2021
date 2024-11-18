@@ -26,7 +26,8 @@ LOCATIONS = \
                 "chrome":
                     {
                         # "webdriver": "../webdrivers/chromedriver-linux64-110_0_5481/chromedriver",
-                        "webdriver": "../webdrivers/chromedriver-linux64-118_0_5993_70/chromedriver",
+                        # "webdriver": "../webdrivers/chromedriver-linux64-118_0_5993_70/chromedriver",
+                        "webdriver": "../webdrivers/chromedriver-linux64-128_0_6613_84",
                     }
             }
     }

@@ -61,6 +61,7 @@ assert driver.find_element(By.ID, "chrome").is_selected() is False  # correct
 assert driver.find_element(By.ID, "chrome").get_attribute("checked") is None  # correct
 assert driver.find_element(By.ID, "opera").is_selected() is True  # correct
 assert driver.find_element(By.ID, "opera").get_attribute("checked") == "true"  # correct
+# Notice: The user's click on a checkbox changes the property, but not the attribute in the DOM.
 
 # Unselect check buttons
 driver.find_element(By.ID, "firefox").click()
